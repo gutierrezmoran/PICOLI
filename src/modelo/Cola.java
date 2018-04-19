@@ -7,7 +7,7 @@ public class Cola {
 	private ArrayDeque<Colores> cola;
 
 	public Cola() {
-
+		this.cola = new ArrayDeque<Colores>();
 	}
 
 	public ArrayDeque<Colores> getCola() {
