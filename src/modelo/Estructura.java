@@ -22,6 +22,7 @@ public class Estructura {
 		return cola;
 	}
 
+
 	public ArrayList<Pila> getPilas() {
 		return pilas;
 	}
@@ -32,8 +33,9 @@ public class Estructura {
 
 	public void inicializarCola() {
 		for (int i = 0; i < Constantes.TAMANO_COLA; i++) {
-			cola.encolar(Colores.getElement(Utiles.generrNumeroAleatorio()));
+			cola.encolar(Colores.getElement(Utiles.generarNumeroAleatorio(0, 5)));
 		}
+		
 	}
 
 }
