@@ -1,10 +1,9 @@
 package utiles;
 
 public class Utiles {
-	
-public int generrNumeroAleatorio() {
-	return 0;
-	
-	
-}
+
+	public static int generrNumeroAleatorio() {
+		return 0;
+
+	}
 }

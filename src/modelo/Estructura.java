@@ -11,10 +11,12 @@ public class Estructura {
 private Cola cola;
 private ArrayList<Pila> Pilas;
 private Lista lista;
-Utiles utiles = new Utiles();
 
-public Estructura() {
-	
+
+public Estructura(Cola cola, ArrayList<Pila> pilas, Lista lista) {
+	this.cola = cola;
+	Pilas = pilas;
+	this.lista = lista;
 }
 
 public Cola getCola() {
@@ -30,7 +32,7 @@ public Lista getLista() {
 
 public void inicializarCola() {
 	for (int i = 0; i < Constantes.TAMANO_COLA; i++) {
-		cola.encolar(Colores.getElement(utiles.generrNumeroAleatorio()));
+			cola.encolar(Colores.getElement(Utiles.generrNumeroAleatorio()));
 	}
 }
 	
