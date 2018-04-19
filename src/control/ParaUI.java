@@ -1,8 +1,8 @@
 package control;
 
-import modelo.Partida;
+import modelo.Estructura;
 import vista.UI;
 
 public class ParaUI extends UI {
-	private Partida control = new Partida();
+	private Estructura control = new Estructura();
 }
