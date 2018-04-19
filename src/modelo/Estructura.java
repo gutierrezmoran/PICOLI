@@ -32,7 +32,7 @@ public class Estructura {
 
 	public void inicializarCola() {
 		for (int i = 0; i < Constantes.TAMANO_COLA; i++) {
-			cola.encolar(Colores.getElement(Utiles.generarNumeroAleatorio()));
+			cola.encolar(Colores.getElement(Utiles.generrNumeroAleatorio()));
 		}
 	}
 

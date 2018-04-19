@@ -3,8 +3,10 @@ package modelo;
 import java.awt.Color;
 
 public enum Colores {
+	
 	rojo(Color.red, "rojo"), amarillo(Color.YELLOW, "amarillo"), azul(Color.BLUE, "azul"), verde(Color.GREEN,
 			"verde"), naranja(Color.orange, "naranja");
+
 	private Color color;
 	private String nombre;
 
