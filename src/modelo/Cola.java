@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.ArrayDeque;
 
-public class Cola {
+public class Cola extends ArrayDeque<Colores>{
 
 	private ArrayDeque<Colores> cola;
 
