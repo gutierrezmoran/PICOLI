@@ -1,19 +1,15 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.awt.Color;
 import java.util.AbstractCollection;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Stack;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
-
 import control.Comprobador;
+import modelo.Colores;
 
 class ComprobadorTest {
-	
-	Comprobador instancia = Comprobador.getInstance();
 	
 	@Test
 	void testIsColeccionLlena() {
@@ -22,15 +18,15 @@ class ComprobadorTest {
 		final int limiteBajo = 2;
 		final int limiteIgual = 5;
 		
-		ArrayList<AbstractCollection<Color>> colecciones = new ArrayList<>();
+		ArrayList<AbstractCollection<Colores>> colecciones = new ArrayList<>();
 		
-		colecciones.add(new ArrayDeque<Color>());
-		colecciones.add(new Stack<Color>());
-		colecciones.add(new ArrayList<Color>());
+		colecciones.add(new ArrayDeque<Colores>());
+		colecciones.add(new Stack<Colores>());
+		colecciones.add(new ArrayList<Colores>());
 		
 		for (int i = 0; i < colecciones.size(); i++) {
 			for (int j = 0; j < 5; j++) {
-				((AbstractCollection<Color>) colecciones.get(i)).add(Color.BLACK);
+				((AbstractCollection<Colores>) colecciones.get(i)).add(Colores.amarillo);
 			}
 		}
 		
@@ -38,30 +34,30 @@ class ComprobadorTest {
 			System.out.println("PROBANDO SI COLECCION " + i);
 			
 			System.out.println("	* esta llena");
-			assertTrue(this.instancia.isColeccionLlena(colecciones.get(i), limiteBajo));
+			assertTrue(Comprobador.isColeccionLlena(colecciones.get(i), limiteBajo));
 			System.out.println("	* esta al limite");
-			assertTrue(this.instancia.isColeccionLlena(colecciones.get(i), limiteIgual));
+			assertTrue(Comprobador.isColeccionLlena(colecciones.get(i), limiteIgual));
 			System.out.println("	* esta sobrante");
-			assertFalse(this.instancia.isColeccionLlena(colecciones.get(i), limiteAlto));
+			assertFalse(Comprobador.isColeccionLlena(colecciones.get(i), limiteAlto));
 		}
 
 	}
 	
 	@Test
 	void testIsColoresIgualesContiguos() {
-		ArrayList<Color> coloresContiguos = new ArrayList<>();
-		ArrayList<Color> coloresNoContiguos = new ArrayList<>();
+		ArrayList<Colores> coloresContiguos = new ArrayList<>();
+		ArrayList<Colores> coloresNoContiguos = new ArrayList<>();
 		
 		for (int i = 0; i < 2; i++) {
-			coloresContiguos.add(Color.BLACK);
-			coloresContiguos.add(Color.red);
-			coloresContiguos.add(Color.BLACK);
-			coloresNoContiguos.add(Color.BLACK);
-			coloresNoContiguos.add(Color.RED);
+			coloresContiguos.add(Colores.amarillo);
+			coloresContiguos.add(Colores.azul);
+			coloresContiguos.add(Colores.amarillo);
+			coloresNoContiguos.add(Colores.naranja);
+			coloresNoContiguos.add(Colores.rojo);
 		}
 		
-		assertTrue(this.instancia.isColoresIgualesContiguos(coloresContiguos));
-		assertFalse(this.instancia.isColoresIgualesContiguos(coloresNoContiguos));
+		assertTrue(Comprobador.isColoresIgualesContiguos(coloresContiguos));
+		assertFalse(Comprobador.isColoresIgualesContiguos(coloresNoContiguos));
 	}
 
 }

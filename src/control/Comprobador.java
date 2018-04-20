@@ -1,27 +1,11 @@
 package control;
 
-import java.awt.Color;
 import java.util.AbstractCollection;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Stack;
-
-import org.hamcrest.core.IsInstanceOf;
+import modelo.Colores;
 
 public class Comprobador {
-
-	private static Comprobador comprobador;
-
-	private Comprobador() {
-	}
-
-	public static Comprobador getInstance() {
-		if (comprobador == null) {
-			comprobador = new Comprobador();
-		}
-
-		return comprobador;
-	}
 	
 	/**
 	 * Comprueba si una coleccion esta llena
@@ -30,7 +14,7 @@ public class Comprobador {
 	 * @param limite
 	 * @return Retorna TRUE en caso de que este llena o FALSE en caso contrario.
 	 */
-	public boolean isColeccionLlena(AbstractCollection<Color> coleccion, int limite) {
+	public static boolean isColeccionLlena(AbstractCollection<Colores> coleccion, int limite) {
 		if (coleccion.size() >= limite) {
 			return true;
 		}
@@ -44,7 +28,7 @@ public class Comprobador {
 	 * @param coleccion
 	 * @return Retorna TRUE si hay dos colores iguales y contiguos o FALSE en caso contrario.
 	 */
-	public boolean isColoresIgualesContiguos(AbstractCollection<Color> coleccion) {
+	public static boolean isColoresIgualesContiguos(AbstractCollection<Colores> coleccion) {
 		for (int i = 0; i < coleccion.size() - 1; i++) {
 			if(comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
 				return true;
@@ -54,7 +38,7 @@ public class Comprobador {
 		return false;
 	}
 	
-	private boolean comprobarColoresIguales(Color color1, Color color2) {
+	private static boolean comprobarColoresIguales(Colores color1, Colores color2) {
 		if (color1 == color2) {
 			return true;
 		}
@@ -62,12 +46,12 @@ public class Comprobador {
 		return false;
 	}
 	
-	private Color getColor(AbstractCollection<Color> coleccion, int posicion) {
+	private static Colores getColor(AbstractCollection<Colores> coleccion, int posicion) {
 		if (coleccion instanceof Stack) {
-			return ((Stack<Color>) coleccion).get(posicion);
+			return ((Stack<Colores>) coleccion).get(posicion);
 		}
 		
-		return ((ArrayList<Color>) coleccion).get(posicion);
+		return ((ArrayList<Colores>) coleccion).get(posicion);
 	}
 
 }
