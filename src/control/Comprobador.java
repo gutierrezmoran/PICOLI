@@ -38,6 +38,24 @@ public class Comprobador {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * Comprueba la posicion del color repetido en una coleccion
+	 * 
+	 * @param coleccion
+	 * @return Retorna la posicion del color repetido
+	 */
+	public static int getColorIgualContiguo(AbstractCollection<Colores> coleccion) {
+		int indice = 0;
+		for (int i = 0; i < coleccion.size() - 1; i++) {
+			if(comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
+				indice = i;
+				break;
+			}
+		}
+		return indice;
+	}
+	
 	private static boolean comprobarColoresIguales(Colores color1, Colores color2) {
 		if (color1 == color2) {
 			return true;
