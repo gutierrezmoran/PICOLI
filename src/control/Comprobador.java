@@ -4,6 +4,7 @@ import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Stack;
 import modelo.Colores;
+import utiles.Constantes;
 
 public class Comprobador {
 	
@@ -36,6 +37,16 @@ public class Comprobador {
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Comprueba si se ha superado-igualado o no la cantidad de monedas necesarias para ganar la partida
+	 * 
+	 * @param monedas
+	 * @return Retorna TRUE si se ha igualado o superado la cantidad de monedas o FALSE en caso contrario
+	 */
+	public static boolean isMonedasGanadoras(int monedas) {
+		return monedas >= Constantes.CANTIDAD_MAX_MONEDAS;
 	}
 	
 	/**
