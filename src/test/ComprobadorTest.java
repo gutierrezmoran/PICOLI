@@ -8,6 +8,7 @@ import java.util.Stack;
 import org.junit.jupiter.api.Test;
 import control.Comprobador;
 import modelo.Colores;
+import utiles.Constantes;
 
 class ComprobadorTest {
 	
@@ -58,6 +59,17 @@ class ComprobadorTest {
 		
 		assertTrue(Comprobador.isColoresIgualesContiguos(coloresContiguos));
 		assertFalse(Comprobador.isColoresIgualesContiguos(coloresNoContiguos));
+	}
+	
+	@Test
+	void testIsMonedasGanadoras() {
+		int[] monedas = {Constantes.CANTIDAD_MAX_MONEDAS, Constantes.CANTIDAD_MAX_MONEDAS + 1, Constantes.CANTIDAD_MAX_MONEDAS - 1};
+		boolean[] respuestas = {true, true, false};
+		
+		for (int i = 0; i < respuestas.length; i++) {
+			System.out.println("Probando cantidad de monedas numero: " + i);
+			assertEquals(respuestas[i], Comprobador.isMonedasGanadoras(monedas[i]));
+		}
 	}
 
 }
