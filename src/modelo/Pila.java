@@ -15,7 +15,7 @@ public class Pila extends Stack<Colores> {
 	}
 
 	public void apilar(Colores color) {
-		pila.add(color);
+		pila.push(color);
 	}
 
 	public Colores desapilar() {
