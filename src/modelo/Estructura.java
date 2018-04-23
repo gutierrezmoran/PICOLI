@@ -1,12 +1,8 @@
 package modelo;
 
 import java.util.AbstractCollection;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Stack;
-
-import control.Comprobador;
 import utiles.Constantes;
 import utiles.Utiles;
 
@@ -39,26 +35,106 @@ public class Estructura {
 		}
 
 	}
+
 	public void realizarJugada(Colores color) {
 		this.cola.encolar(color);
 		Pila pilaSeleccionada = getPilaAleatoria();
 		pilaSeleccionada.apilar(this.cola.desencolar());
-		if (Comprobador.isColeccionLlena(pilaSeleccionada, Constantes.TAMANO_PILA)) {
+		if (isColeccionLlena(pilaSeleccionada, Constantes.TAMANO_PILA)) {
 			this.lista.alistar(pilaSeleccionada.pop());
-		} 
+		}
 	}
-	private Pila getPilaAleatoria(){
-		int numero=Utiles.generarNumeroAleatorio(0, 1);
-		if (Comprobador.isColeccionLlena(this.pilas.get(numero), Constantes.TAMANO_PILA)) {
-			if (numero==0) {
+
+	private Pila getPilaAleatoria() {
+		int numero = Utiles.generarNumeroAleatorio(0, 1);
+		if (isColeccionLlena(this.pilas.get(numero), Constantes.TAMANO_PILA)) {
+			if (numero == 0) {
 				return this.pilas.get(1);
-			}else {
+			} else {
 				return this.pilas.get(0);
 			}
-		}else {
+		} else {
 			return this.pilas.get(numero);
 		}
-		
+
+	}
+
+	/**
+	 * Comprueba si una coleccion esta llena
+	 * 
+	 * @param coleccion
+	 * @param limite
+	 * @return Retorna TRUE en caso de que este llena o FALSE en caso contrario.
+	 */
+	public static boolean isColeccionLlena(AbstractCollection<Colores> coleccion, int limite) {
+		if (coleccion.size() >= limite) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Comprueba si dentro de una coleccion hay dos colores iguales y contiguos.
+	 * 
+	 * @param coleccion
+	 * @return Retorna TRUE si hay dos colores iguales y contiguos o FALSE en caso
+	 *         contrario.
+	 */
+	public static boolean isColoresIgualesContiguos(AbstractCollection<Colores> coleccion) {
+		for (int i = 0; i < coleccion.size() - 1; i++) {
+			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Comprueba si se ha superado-igualado o no la cantidad de monedas necesarias
+	 * para ganar la partida
+	 * 
+	 * @param monedas
+	 * @return Retorna TRUE si se ha igualado o superado la cantidad de monedas o
+	 *         FALSE en caso contrario
+	 */
+	public static boolean isMonedasGanadoras(int monedas) {
+		return monedas >= Constantes.CANTIDAD_MAX_MONEDAS;
+	}
+
+	/**
+	 * 
+	 * Comprueba la posicion del color repetido en una coleccion
+	 * 
+	 * @param coleccion
+	 * @return Retorna la posicion del color repetido
+	 */
+	public static int getColorIgualContiguo(AbstractCollection<Colores> coleccion) {
+		int indice = 0;
+		for (int i = 0; i < coleccion.size() - 1; i++) {
+			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
+				indice = i;
+				break;
+			}
+		}
+		return indice;
+	}
+
+	private static boolean comprobarColoresIguales(Colores color1, Colores color2) {
+		if (color1 == color2) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private static Colores getColor(AbstractCollection<Colores> coleccion, int posicion) {
+		if (coleccion instanceof Stack) {
+			return ((Stack<Colores>) coleccion).get(posicion);
+		}
+
+		return ((ArrayList<Colores>) coleccion).get(posicion);
 	}
 
 }
