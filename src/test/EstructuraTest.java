@@ -16,8 +16,20 @@ class EstructuraTest {
 
 	@Test
 	void testInicializarCola() {
-		estructura.inicializarCola();
-		assertEquals(estructura.getCola().getCola().size(), Constantes.TAMANO_COLA);
+		assertEquals(Constantes.TAMANO_COLA, estructura.getCola().getCola().size());
+	}
+
+	@Test
+	void testRealizarJugada() {
+		estructura.realizarJugada(Colores.amarillo);
+		
+		for (int i = 0; i < 4; i++) {
+			estructura.getPilas().get(0).getPila().add(Colores.amarillo);
+			estructura.getPilas().get(1).getPila().add(Colores.amarillo);
+		}
+
+		estructura.realizarJugada(Colores.azul);
+		assert(!estructura.getLista().getLista().isEmpty());
 	}
 
 	@Test
@@ -41,7 +53,6 @@ class EstructuraTest {
 
 		for (int i = 0; i < 3; i++) {
 			System.out.println("PROBANDO SI COLECCION " + i);
-
 			System.out.println("	* esta llena");
 			assertTrue(Estructura.isColeccionLlena(colecciones.get(i), limiteBajo));
 			System.out.println("	* esta al limite");
@@ -67,18 +78,6 @@ class EstructuraTest {
 
 		assertTrue(Estructura.isColoresIgualesContiguos(coloresContiguos));
 		assertFalse(Estructura.isColoresIgualesContiguos(coloresNoContiguos));
-	}
-
-	@Test
-	void testIsMonedasGanadoras() {
-		int[] monedas = { Constantes.CANTIDAD_MAX_MONEDAS, Constantes.CANTIDAD_MAX_MONEDAS + 1,
-				Constantes.CANTIDAD_MAX_MONEDAS - 1 };
-		boolean[] respuestas = { true, true, false };
-
-		for (int i = 0; i < respuestas.length; i++) {
-			System.out.println("Probando cantidad de monedas numero: " + i);
-			assertEquals(respuestas[i], Estructura.isMonedasGanadoras(monedas[i]));
-		}
 	}
 
 }

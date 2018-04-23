@@ -17,7 +17,7 @@ class UtilesTest {
 
 		for (int i = 0; i < 200; i++) {
 			assertTrue(Utiles.generarNumeroAleatorio(min, max) >= min);
-			assertTrue(Utiles.generarNumeroAleatorio(min, max) <= max);
+			assertTrue(Utiles.generarNumeroAleatorio(min, max) < max);
 		}
 
 	}

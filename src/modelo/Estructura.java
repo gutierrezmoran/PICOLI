@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.AbstractCollection;
+
 import java.util.ArrayList;
 import java.util.Stack;
 import utiles.Constantes;
@@ -10,11 +11,22 @@ public class Estructura {
 	private Cola cola;
 	private ArrayList<Pila> pilas;
 	private Lista lista;
+	private int monedas;
+
+	public int getMonedas() {
+		return monedas;
+	}
+
+	public void setMonedas(int monedas) {
+		this.monedas = monedas;
+	}
 
 	public Estructura() {
 		this.cola = new Cola();
 		this.pilas = new ArrayList<>();
 		this.lista = new Lista();
+		inicializarCola();
+		inicializarPilas();
 	}
 
 	public Cola getCola() {
@@ -31,30 +43,57 @@ public class Estructura {
 
 	public void inicializarCola() {
 		for (int i = 0; i < Constantes.TAMANO_COLA; i++) {
-			cola.encolar(Colores.getElement(Utiles.generarNumeroAleatorio(0, 5)));
+			this.cola.encolar(Colores.getElement(Utiles.generarNumeroAleatorio(1, 5)));
 		}
-
+	}
+	
+	public void inicializarPilas() {
+		for (int i = 0; i < 2; i++) {
+			this.pilas.add(new Pila());
+		}
 	}
 
-	public void realizarJugada(Colores color) {
+	public boolean realizarJugada(Colores color) {
 		this.cola.encolar(color);
-		Pila pilaSeleccionada = getPilaAleatoria();
-		pilaSeleccionada.apilar(this.cola.desencolar());
-		if (isColeccionLlena(pilaSeleccionada, Constantes.TAMANO_PILA)) {
-			this.lista.alistar(pilaSeleccionada.pop());
+		int pilaSeleccionada = getPilaAleatoria();
+		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
+		
+		if (isColeccionLlena(this.pilas.get(pilaSeleccionada).getPila(), Constantes.TAMANO_PILA)) {
+			this.lista.alistar(this.pilas.get(pilaSeleccionada).getPila().pop());
 		}
+		
+		while (isColoresIgualesContiguos(this.lista.getLista())) {
+			this.lista.desalistarRepetidos(getColorIgualContiguo(this.lista.getLista()));
+			incrementarMonedas();
+			if (isMonedasGanadoras()) {
+				return true;
+			}
+		}
+		if (isColeccionLlena(this.lista.getLista(), Constantes.TAMANO_LISTA_LADO)) {
+			return true;
+		}
+
+		return false;
 	}
 
-	private Pila getPilaAleatoria() {
+	/**
+	 * Incrementa las monedas (+2)
+	 */
+	private void incrementarMonedas() {
+		this.monedas = this.monedas + 2;
+	}
+
+	/**
+	 * Retorna una pila aleatoria
+	 * 
+	 * @return
+	 */
+	private int  getPilaAleatoria() {
 		int numero = Utiles.generarNumeroAleatorio(0, 1);
-		if (isColeccionLlena(this.pilas.get(numero), Constantes.TAMANO_PILA)) {
-			if (numero == 0) {
-				return this.pilas.get(1);
-			} else {
-				return this.pilas.get(0);
-			}
+		if (isColeccionLlena(this.pilas.get(numero).getPila(), Constantes.TAMANO_PILA)) {
+			return ((numero + 1) % 2);
 		} else {
-			return this.pilas.get(numero);
+			return numero;
 		}
 
 	}
@@ -67,11 +106,8 @@ public class Estructura {
 	 * @return Retorna TRUE en caso de que este llena o FALSE en caso contrario.
 	 */
 	public static boolean isColeccionLlena(AbstractCollection<Colores> coleccion, int limite) {
-		if (coleccion.size() >= limite) {
-			return true;
-		}
+		return coleccion.size() >= limite;
 
-		return false;
 	}
 
 	/**
@@ -87,7 +123,6 @@ public class Estructura {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -99,8 +134,8 @@ public class Estructura {
 	 * @return Retorna TRUE si se ha igualado o superado la cantidad de monedas o
 	 *         FALSE en caso contrario
 	 */
-	public static boolean isMonedasGanadoras(int monedas) {
-		return monedas >= Constantes.CANTIDAD_MAX_MONEDAS;
+	public boolean isMonedasGanadoras() {
+		return this.monedas >= Constantes.CANTIDAD_MAX_MONEDAS;
 	}
 
 	/**
@@ -125,7 +160,6 @@ public class Estructura {
 		if (color1 == color2) {
 			return true;
 		}
-
 		return false;
 	}
 
@@ -133,7 +167,6 @@ public class Estructura {
 		if (coleccion instanceof Stack) {
 			return ((Stack<Colores>) coleccion).get(posicion);
 		}
-
 		return ((ArrayList<Colores>) coleccion).get(posicion);
 	}
 

@@ -2,8 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
-
-public class Lista extends ArrayList<Colores>{
+public class Lista extends ArrayList<Colores> {
 
 	private ArrayList<Colores> lista;
 

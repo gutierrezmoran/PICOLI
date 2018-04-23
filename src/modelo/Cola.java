@@ -16,7 +16,7 @@ public class Cola extends ArrayDeque<Colores>{
 
 	public void encolar(Colores color) {
 		cola.add(color);
-	}
+	} 
 
 	public Colores desencolar() {
 		return cola.pop();
