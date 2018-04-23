@@ -11,14 +11,17 @@ public class Historial {
 		this.listaColores = new ArrayList<>();
 	}
 
-	/*
-	 * Comprueba si existen más de dos coincidencias de colores en el historial
-	 */
-
 	public ArrayList<Colores> getListaColores() {
 		return listaColores;
 	}
 
+	/**
+	 * Comprueba si existen más de dos coincidencias de colores en el historial
+	 * 
+	 * @param color
+	 * @param historial
+	 * @return
+	 */
 	public boolean buscarCoincidencias(Colores color, ArrayList<Colores> historial) {
 		int coincidencias = 0;
 		for (Colores colores : historial) {
@@ -26,31 +29,25 @@ public class Historial {
 				coincidencias++;
 			}
 		}
-		if (coincidencias >= 2) {
-			return true;
-		}
-		return false;
+		return coincidencias >= 2;
 	}
 
-	/*
+	/**
 	 * Este método introduce un color en el historial sustituyendo el más antiguo
+	 * 
+	 * @param color
 	 */
-
 	public void sustituirColor(Colores color) {
 		listaColores.remove(0);
 		listaColores.add(color);
 	}
 
-	/*
+	/**
 	 * Comprueba si el historial está completo
+	 * 
+	 * @return Retorna true si el historial esta completo o false en caso contrario
 	 */
-
 	public boolean comprobarHistorialCompleto() {
-		if (listaColores.size() >= Constantes.TAMANO_HISTORICO) {
-			return true;
-		} else {
-			return false;
-		}
-
+		return listaColores.size() >= Constantes.TAMANO_HISTORICO;
 	}
 }
