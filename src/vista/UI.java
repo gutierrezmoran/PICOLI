@@ -17,6 +17,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.ImageIcon;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
 
 public class UI extends JFrame {
 
@@ -49,7 +50,7 @@ public class UI extends JFrame {
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panelCola = new JPanel();
-		panelCola.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelCola.setBorder(new EmptyBorder(10, 20, 5, 20));
 		panelPrincipal.add(panelCola, BorderLayout.NORTH);
 		panelCola.setLayout(new BorderLayout(0, 0));
 
@@ -67,6 +68,7 @@ public class UI extends JFrame {
 		panelCabeceraCola.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("COLA");
+		lblNewLabel_1.setBorder(new EmptyBorder(0, 0, 5, 0));
 		panelCabeceraCola.add(lblNewLabel_1, BorderLayout.NORTH);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1.setFont(new Font("Gadugi", Font.BOLD, 14));
@@ -87,12 +89,12 @@ public class UI extends JFrame {
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
 		JPanel panelPilas = new JPanel();
-		panelPilas.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelPilas.setBorder(new EmptyBorder(5, 20, 10, 20));
 		panelPrincipal.add(panelPilas, BorderLayout.WEST);
 		panelPilas.setLayout(new BorderLayout(5, 0));
 		
 		JPanel panelPila_1 = new JPanel();
-		panelPila_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panelPila_1.setPreferredSize(new Dimension(60, 10));
 		panelPila_1.setMinimumSize(new Dimension(30, 10));
 		panelPila_1.setBackground(Color.WHITE);
@@ -100,29 +102,26 @@ public class UI extends JFrame {
 		panelPila_1.setLayout(new BorderLayout(0, 0));
 		
 		Pila pila_1= new Pila();
-		panelPila_1.add(pila_1, BorderLayout.CENTER);
+		pila_1.setBorder(null);
+		pila_1.setBackground(Color.WHITE);
+		panelPila_1.add(pila_1);
 		
 		JPanel panelPila_2 = new JPanel();
-		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panelPila_2.setPreferredSize(new Dimension(60, 10));
 		panelPila_2.setBackground(Color.WHITE);
 		panelPilas.add(panelPila_2, BorderLayout.EAST);
+		panelPila_2.setLayout(new BorderLayout(0, 0));
 		
 		Pila pila_2= new Pila();
-		panelPila_2.add(pila_2);
-		
-		JLabel label = new JLabel("");
-		panelPila_2.add(label);
+		pila_2.setBackground(Color.WHITE);
+		panelPila_2.add(pila_2, BorderLayout.CENTER);
 		
 		JLabel lblPilas = new JLabel("PILAS");
+		lblPilas.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblPilas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPilas.setFont(new Font("Gadugi", Font.BOLD, 14));
 		panelPilas.add(lblPilas, BorderLayout.NORTH);
-		
-		JLabel lblPila = new JLabel("         1                     2");
-		lblPila.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblPila.setHorizontalAlignment(SwingConstants.LEFT);
-		panelPilas.add(lblPila, BorderLayout.SOUTH);
 		
 		JPanel panelInferior = new JPanel();
 		panelInferior.setBorder(new EmptyBorder(10, 20, 10, 20));
@@ -171,16 +170,17 @@ public class UI extends JFrame {
 		
 		
 		Lista lista = new Lista();
-		lista.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		lista.setBorder(new LineBorder(new Color(0, 0, 0)));
 		lista.setBackground(Color.white);
 		
 		
 		JPanel panelLista = new JPanel();
-		panelLista.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelLista.setBorder(new EmptyBorder(5, 20, 10, 20));
 		panelPrincipal.add(panelLista, BorderLayout.CENTER);
 		panelLista.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblLista = new JLabel("LISTA");
+		lblLista.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblLista.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLista.setFont(new Font("Gadugi", Font.BOLD, 14));
 		panelLista.add(lblLista, BorderLayout.NORTH);
