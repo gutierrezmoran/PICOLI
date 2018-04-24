@@ -16,6 +16,7 @@ import javax.swing.BoxLayout;
 import javax.swing.border.LineBorder;
 import javax.swing.ImageIcon;
 import java.awt.GridLayout;
+import javax.swing.JButton;
 
 public class UI extends JFrame {
 
@@ -115,12 +116,37 @@ public class UI extends JFrame {
 		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
 		
 		JPanel panelInferior = new JPanel();
-		panelInferior.setBorder(new EmptyBorder(10, 10, 10, 10));
+		panelInferior.setBorder(new EmptyBorder(10, 20, 10, 20));
 		panelPrincipal.add(panelInferior, BorderLayout.SOUTH);
-		panelInferior.setLayout(new BorderLayout(0, 0));
+		panelInferior.setLayout(new BorderLayout(50, 0));
 		
 		JPanel panelBotones = new JPanel();
 		panelInferior.add(panelBotones);
+		panelBotones.setLayout(new GridLayout(0, 4, 5, 0));
+		
+		JButton borrarColor = new JButton("Borrar Color");
+		borrarColor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		borrarColor.setFocusPainted(false);
+		borrarColor.setBackground(Color.WHITE);
+		panelBotones.add(borrarColor);
+		
+		JButton pedirColor = new JButton("Pedir Color");
+		pedirColor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		pedirColor.setFocusPainted(false);
+		pedirColor.setBackground(Color.WHITE);
+		panelBotones.add(pedirColor);
+		
+		JButton barajarPila = new JButton("Barajar Pila");
+		barajarPila.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		barajarPila.setFocusPainted(false);
+		barajarPila.setBackground(Color.WHITE);
+		panelBotones.add(barajarPila);
+		
+		JButton seleccionarColor = new JButton("Seleccionar Color");
+		seleccionarColor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		seleccionarColor.setFocusPainted(false);
+		seleccionarColor.setBackground(Color.WHITE);
+		panelBotones.add(seleccionarColor);
 		
 		JPanel panelMonedas = new JPanel();
 		panelInferior.add(panelMonedas, BorderLayout.WEST);
