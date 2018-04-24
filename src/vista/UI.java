@@ -23,7 +23,7 @@ public class UI extends JFrame {
 	protected Cola cola;
 
 	public UI() {
-		setMinimumSize(new Dimension(800, 800));
+		setMinimumSize(new Dimension(700, 600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -85,19 +85,29 @@ public class UI extends JFrame {
 		lblNewLabel_3.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.YELLOW);
-		panelPrincipal.add(panel, BorderLayout.WEST);
-		panel.setLayout(new BorderLayout(0, 0));
+		JPanel panelPilas = new JPanel();
+		panelPilas.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelPrincipal.add(panelPilas, BorderLayout.WEST);
+		panelPilas.setLayout(new BorderLayout(5, 0));
 		
 		JPanel panelPila_1 = new JPanel();
-		panel.add(panelPila_1, BorderLayout.NORTH);
+		panelPila_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_1.setPreferredSize(new Dimension(60, 10));
+		panelPila_1.setMinimumSize(new Dimension(30, 10));
+		panelPila_1.setBackground(Color.WHITE);
+		panelPilas.add(panelPila_1, BorderLayout.WEST);
 		
 		Pila pila_1= new Pila();
 		panelPila_1.add(pila_1);
 		
-		JPanel lista_2 = new JPanel();
-		panel.add(lista_2, BorderLayout.SOUTH);
+		JPanel panelPila_2 = new JPanel();
+		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_2.setPreferredSize(new Dimension(60, 10));
+		panelPila_2.setBackground(Color.WHITE);
+		panelPilas.add(panelPila_2, BorderLayout.EAST);
+		
+		Pila pila_2= new Pila();
+		panelPila_2.add(pila_2);
 		
 		JLabel lblAquiLaLista = new JLabel("aqui la lista");
 		lblAquiLaLista.setBackground(Color.WHITE);
