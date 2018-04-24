@@ -17,17 +17,13 @@ public class Cola extends JPanel {
 	}
 	
 	public void agregarColor(Colores color, int posicion) {
-		JPanel panel = new JPanel();
-		panel.setBackground(color.getColor());
-		panel.setLayout(new BorderLayout(0, 0));
-		panel.setName(String.valueOf((posicion + 1)));
-		
-		JLabel label = new JLabel(String.valueOf(panel.getName()));
+		JLabel label = new JLabel();
+		label.setBackground(color.getColor());
 		label.setBorder(new EmptyBorder(3, 3, 3, 3));
 		label.setFont(new Font("Arial", Font.PLAIN, 9));
-		panel.add(label, BorderLayout.NORTH);
+		label.setOpaque(true);
 		
-		this.add(panel);
+		this.add(label);
 	}
 
 }
