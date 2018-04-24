@@ -56,9 +56,9 @@ public class UI extends JFrame {
 		this.cola = new Cola();
 		cola.setBackground(Color.BLACK);
 		GridLayout gridLayout = (GridLayout) cola.getLayout();
-		gridLayout.setHgap(2);
+		gridLayout.setHgap(1);
 		panelCola.add(cola, BorderLayout.CENTER);
-		cola.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		cola.setBorder(new LineBorder(new Color(0, 0, 0), 1));
 		cola.setPreferredSize(new Dimension(10, 80));
 		cola.setMinimumSize(new Dimension(10, 80));
 		
