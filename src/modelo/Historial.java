@@ -38,8 +38,12 @@ public class Historial {
 	 * @param color
 	 */
 	public void sustituirColor(Colores color) {
-		listaColores.remove(0);
-		listaColores.add(color);
+		if (listaColores.size() >= Constantes.TAMANO_HISTORICO) {
+			listaColores.remove(0);
+			listaColores.add(color);
+		} else {
+			listaColores.add(color);
+		}
 	}
 
 	/**
