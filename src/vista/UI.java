@@ -92,9 +92,19 @@ public class UI extends JFrame {
 		lblAquiLaLista.setHorizontalAlignment(SwingConstants.CENTER);
 		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
 		
-		JLabel lblAquiLosControles = new JLabel("Aqui los controles");
-		lblAquiLosControles.setHorizontalAlignment(SwingConstants.CENTER);
-		panelPrincipal.add(lblAquiLosControles, BorderLayout.SOUTH);
+		JPanel panelInferior = new JPanel();
+		panelPrincipal.add(panelInferior, BorderLayout.SOUTH);
+		panelInferior.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panelBotones = new JPanel();
+		panelInferior.add(panelBotones);
+		
+		JPanel panelMonedas = new JPanel();
+		panelInferior.add(panelMonedas, BorderLayout.WEST);
+		panelMonedas.setLayout(new BorderLayout(0, 0));
+		
+		JLabel label = new JLabel("");
+		panelMonedas.add(label, BorderLayout.NORTH);
 	}
 
 }
