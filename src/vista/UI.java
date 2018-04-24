@@ -109,11 +109,6 @@ public class UI extends JFrame {
 		Pila pila_2= new Pila();
 		panelPila_2.add(pila_2);
 		
-		JLabel lblAquiLaLista = new JLabel("aqui la lista");
-		lblAquiLaLista.setBackground(Color.WHITE);
-		lblAquiLaLista.setHorizontalAlignment(SwingConstants.CENTER);
-		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
-		
 		JPanel panelInferior = new JPanel();
 		panelInferior.setBorder(new EmptyBorder(10, 10, 10, 10));
 		panelPrincipal.add(panelInferior, BorderLayout.SOUTH);
@@ -133,6 +128,18 @@ public class UI extends JFrame {
 		JLabel cantidadMonedas = new JLabel("5");
 		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panelMonedas.add(cantidadMonedas, BorderLayout.EAST);
+		
+		
+		Lista lista = new Lista();
+		lista.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		lista.setBackground(Color.white);
+		
+		
+		JPanel panelLista = new JPanel();
+		panelLista.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelPrincipal.add(panelLista, BorderLayout.CENTER);
+		panelLista.setLayout(new BorderLayout(0, 0));
+		panelLista.add(lista);
 	}
 
 }
