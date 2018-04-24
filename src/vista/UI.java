@@ -23,7 +23,7 @@ public class UI extends JFrame {
 	protected Cola cola;
 
 	public UI() {
-		setMinimumSize(new Dimension(800, 800));
+		setMinimumSize(new Dimension(700, 600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -93,6 +93,7 @@ public class UI extends JFrame {
 		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
 		
 		JPanel panelInferior = new JPanel();
+		panelInferior.setBorder(new EmptyBorder(10, 10, 10, 10));
 		panelPrincipal.add(panelInferior, BorderLayout.SOUTH);
 		panelInferior.setLayout(new BorderLayout(0, 0));
 		
@@ -101,10 +102,15 @@ public class UI extends JFrame {
 		
 		JPanel panelMonedas = new JPanel();
 		panelInferior.add(panelMonedas, BorderLayout.WEST);
-		panelMonedas.setLayout(new BorderLayout(0, 0));
+		panelMonedas.setLayout(new BorderLayout(5, 0));
 		
-		JLabel label = new JLabel("");
-		panelMonedas.add(label, BorderLayout.NORTH);
+		JLabel moneda = new JLabel("");
+		moneda.setIcon(new ImageIcon(UI.class.getResource("/assets/coin.gif")));
+		panelMonedas.add(moneda, BorderLayout.WEST);
+		
+		JLabel cantidadMonedas = new JLabel("5");
+		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panelMonedas.add(cantidadMonedas, BorderLayout.EAST);
 	}
 
 }
