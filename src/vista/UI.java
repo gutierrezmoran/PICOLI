@@ -85,10 +85,32 @@ public class UI extends JFrame {
 		lblNewLabel_3.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		JLabel lblAquiLosPaneles = new JLabel("Aqui los paneles de las pilas");
-		panelPrincipal.add(lblAquiLosPaneles, BorderLayout.WEST);
+		JPanel panelPilas = new JPanel();
+		panelPilas.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelPrincipal.add(panelPilas, BorderLayout.WEST);
+		panelPilas.setLayout(new BorderLayout(5, 0));
+		
+		JPanel panelPila_1 = new JPanel();
+		panelPila_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_1.setPreferredSize(new Dimension(60, 10));
+		panelPila_1.setMinimumSize(new Dimension(30, 10));
+		panelPila_1.setBackground(Color.WHITE);
+		panelPilas.add(panelPila_1, BorderLayout.WEST);
+		
+		Pila pila_1= new Pila();
+		panelPila_1.add(pila_1);
+		
+		JPanel panelPila_2 = new JPanel();
+		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelPila_2.setPreferredSize(new Dimension(60, 10));
+		panelPila_2.setBackground(Color.WHITE);
+		panelPilas.add(panelPila_2, BorderLayout.EAST);
+		
+		Pila pila_2= new Pila();
+		panelPila_2.add(pila_2);
 		
 		JLabel lblAquiLaLista = new JLabel("aqui la lista");
+		lblAquiLaLista.setBackground(Color.WHITE);
 		lblAquiLaLista.setHorizontalAlignment(SwingConstants.CENTER);
 		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
 		
