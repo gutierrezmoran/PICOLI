@@ -66,10 +66,10 @@ public class UI extends JFrame {
 		panelCola.add(panelCabeceraCola, BorderLayout.NORTH);
 		panelCabeceraCola.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1 = new JLabel("Cola");
+		JLabel lblNewLabel_1 = new JLabel("COLA");
 		panelCabeceraCola.add(lblNewLabel_1, BorderLayout.NORTH);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1.setFont(new Font("Gadugi", Font.BOLD, 18));
+		lblNewLabel_1.setFont(new Font("Gadugi", Font.BOLD, 14));
 		
 		JPanel panelPieCola = new JPanel();
 		panelPieCola.setBorder(null);
@@ -97,9 +97,10 @@ public class UI extends JFrame {
 		panelPila_1.setMinimumSize(new Dimension(30, 10));
 		panelPila_1.setBackground(Color.WHITE);
 		panelPilas.add(panelPila_1, BorderLayout.WEST);
+		panelPila_1.setLayout(new BorderLayout(0, 0));
 		
 		Pila pila_1= new Pila();
-		panelPila_1.add(pila_1);
+		panelPila_1.add(pila_1, BorderLayout.CENTER);
 		
 		JPanel panelPila_2 = new JPanel();
 		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
@@ -110,10 +111,18 @@ public class UI extends JFrame {
 		Pila pila_2= new Pila();
 		panelPila_2.add(pila_2);
 		
-		JLabel lblAquiLaLista = new JLabel("aqui la lista");
-		lblAquiLaLista.setBackground(Color.WHITE);
-		lblAquiLaLista.setHorizontalAlignment(SwingConstants.CENTER);
-		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
+		JLabel label = new JLabel("");
+		panelPila_2.add(label);
+		
+		JLabel lblPilas = new JLabel("PILAS");
+		lblPilas.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPilas.setFont(new Font("Gadugi", Font.BOLD, 14));
+		panelPilas.add(lblPilas, BorderLayout.NORTH);
+		
+		JLabel lblPila = new JLabel("         1                     2");
+		lblPila.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lblPila.setHorizontalAlignment(SwingConstants.LEFT);
+		panelPilas.add(lblPila, BorderLayout.SOUTH);
 		
 		JPanel panelInferior = new JPanel();
 		panelInferior.setBorder(new EmptyBorder(10, 20, 10, 20));
@@ -159,6 +168,23 @@ public class UI extends JFrame {
 		JLabel cantidadMonedas = new JLabel("5");
 		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panelMonedas.add(cantidadMonedas, BorderLayout.EAST);
+		
+		
+		Lista lista = new Lista();
+		lista.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		lista.setBackground(Color.white);
+		
+		
+		JPanel panelLista = new JPanel();
+		panelLista.setBorder(new EmptyBorder(10, 20, 10, 20));
+		panelPrincipal.add(panelLista, BorderLayout.CENTER);
+		panelLista.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblLista = new JLabel("LISTA");
+		lblLista.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLista.setFont(new Font("Gadugi", Font.BOLD, 14));
+		panelLista.add(lblLista, BorderLayout.NORTH);
+		panelLista.add(lista);
 	}
 
 }
