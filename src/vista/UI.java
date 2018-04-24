@@ -85,10 +85,22 @@ public class UI extends JFrame {
 		lblNewLabel_3.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
-		JLabel lblAquiLosPaneles = new JLabel("Aqui los paneles de las pilas");
-		panelPrincipal.add(lblAquiLosPaneles, BorderLayout.WEST);
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.YELLOW);
+		panelPrincipal.add(panel, BorderLayout.WEST);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panelPila_1 = new JPanel();
+		panel.add(panelPila_1, BorderLayout.NORTH);
+		
+		Pila pila_1= new Pila();
+		panelPila_1.add(pila_1);
+		
+		JPanel lista_2 = new JPanel();
+		panel.add(lista_2, BorderLayout.SOUTH);
 		
 		JLabel lblAquiLaLista = new JLabel("aqui la lista");
+		lblAquiLaLista.setBackground(Color.WHITE);
 		lblAquiLaLista.setHorizontalAlignment(SwingConstants.CENTER);
 		panelPrincipal.add(lblAquiLaLista, BorderLayout.CENTER);
 		
