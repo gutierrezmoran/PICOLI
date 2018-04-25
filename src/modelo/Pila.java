@@ -1,24 +1,25 @@
 package modelo;
 
+import java.awt.Color;
 import java.util.Stack;
 
-public class Pila extends Stack<Colores> {
+public class Pila extends Stack<Color> {
 
-	private Stack<Colores> pila;
+	private Stack<Color> pila;
 
 	public Pila() {
-		this.pila = new Stack<Colores>();
+		this.pila = new Stack<Color>();
 	}
 
-	public Stack<Colores> getPila() {
+	public Stack<Color> getPila() {
 		return pila;
 	}
 
-	public void apilar(Colores color) {
+	public void apilar(Color color) {
 		pila.push(color);
 	}
 
-	public Colores desapilar() {
+	public Color desapilar() {
 		return pila.pop();
 	}
 }

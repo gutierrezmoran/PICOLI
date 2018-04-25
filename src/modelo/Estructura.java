@@ -1,5 +1,6 @@
 package modelo;
 
+import java.awt.Color;
 import java.util.AbstractCollection;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Estructura {
 	private ArrayList<Pila> pilas;
 	private Lista lista;
 	private int monedas;
+	private Historial historial;
 
 	public int getMonedas() {
 		return monedas;
@@ -25,8 +27,13 @@ public class Estructura {
 		this.cola = new Cola();
 		this.pilas = new ArrayList<>();
 		this.lista = new Lista();
+		this.historial = new Historial();
 		inicializarCola();
 		inicializarPilas();
+	}
+
+	public Historial getHistorial() {
+		return historial;
 	}
 
 	public Cola getCola() {
@@ -53,13 +60,14 @@ public class Estructura {
 		}
 	}
 
-	public boolean realizarJugada(Colores color) {
+	public boolean realizarJugada(Color color) {
 		this.cola.encolar(color);
-		int pilaSeleccionada = getPilaAleatoria();
+		this.historial.actualizarHistorial(color);
+		int pilaSeleccionada = getIndicePilaAleatoria();
 		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
 		
 		if (isColeccionLlena(this.pilas.get(pilaSeleccionada).getPila(), Constantes.TAMANO_PILA)) {
-			this.lista.alistar(this.pilas.get(pilaSeleccionada).getPila().pop());
+			this.lista.alistar(this.pilas.get(pilaSeleccionada).desapilar());
 		}
 		
 		while (isColoresIgualesContiguos(this.lista.getLista())) {
@@ -80,7 +88,7 @@ public class Estructura {
 	 * Incrementa las monedas (+2)
 	 */
 	private void incrementarMonedas() {
-		this.monedas = this.monedas + 2;
+		this.monedas+=2;
 	}
 
 	/**
@@ -88,8 +96,8 @@ public class Estructura {
 	 * 
 	 * @return
 	 */
-	private int  getPilaAleatoria() {
-		int numero = Utiles.generarNumeroAleatorio(0, 1);
+	private int getIndicePilaAleatoria() {
+		int numero = Utiles.generarNumeroAleatorio(0, 2);
 		if (isColeccionLlena(this.pilas.get(numero).getPila(), Constantes.TAMANO_PILA)) {
 			return ((numero + 1) % 2);
 		} else {
@@ -105,8 +113,8 @@ public class Estructura {
 	 * @param limite
 	 * @return Retorna TRUE en caso de que este llena o FALSE en caso contrario.
 	 */
-	public static boolean isColeccionLlena(AbstractCollection<Colores> coleccion, int limite) {
-		return coleccion.size() >= limite;
+	public boolean isColeccionLlena(AbstractCollection<Color> coleccion, int limite) {
+		return coleccion.size() > limite;
 
 	}
 
@@ -117,7 +125,7 @@ public class Estructura {
 	 * @return Retorna TRUE si hay dos colores iguales y contiguos o FALSE en caso
 	 *         contrario.
 	 */
-	public static boolean isColoresIgualesContiguos(AbstractCollection<Colores> coleccion) {
+	public boolean isColoresIgualesContiguos(AbstractCollection<Color> coleccion) {
 		for (int i = 0; i < coleccion.size() - 1; i++) {
 			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
 				return true;
@@ -145,7 +153,7 @@ public class Estructura {
 	 * @param coleccion
 	 * @return Retorna la posicion del color repetido
 	 */
-	public static int getColorIgualContiguo(AbstractCollection<Colores> coleccion) {
+	public int getColorIgualContiguo(AbstractCollection<Color> coleccion) {
 		int indice = 0;
 		for (int i = 0; i < coleccion.size() - 1; i++) {
 			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
@@ -156,18 +164,15 @@ public class Estructura {
 		return indice;
 	}
 
-	private static boolean comprobarColoresIguales(Colores color1, Colores color2) {
-		if (color1 == color2) {
-			return true;
-		}
-		return false;
+	private boolean comprobarColoresIguales(Color color1, Color color2) {
+		return color1 == color2;
 	}
 
-	private static Colores getColor(AbstractCollection<Colores> coleccion, int posicion) {
+	private Color getColor(AbstractCollection<Color> coleccion, int posicion) {
 		if (coleccion instanceof Stack) {
-			return ((Stack<Colores>) coleccion).get(posicion);
+			return ((Stack<Color>) coleccion).get(posicion);
 		}
-		return ((ArrayList<Colores>) coleccion).get(posicion);
+		return ((ArrayList<Color>) coleccion).get(posicion);
 	}
 
 }

@@ -1,22 +1,35 @@
 package control;
 
-import modelo.Colores;
+import java.awt.Component;
+import javax.swing.JButton;
 import modelo.Estructura;
 import vista.UI;
 
 public class ParaUI extends UI {
 
 	private Estructura control = new Estructura();
+	private AccionesParaUI accionesParaUI = new AccionesParaUI(this);
 	
 	public ParaUI() {
-		inicializarCola();
+		establecerListenersColores();
 	}
 	
-	public void inicializarCola() {
-		int i = 0;
-		for(Colores color : this.control.getCola().getCola()) {
-			cola.agregarColor(color, i);
-			i++;
+	public void establecerListeners() {
+		establecerListenersColores();
+	}
+
+	private void establecerListenersColores() {
+		for (Component componente : panelColores.getComponents()) {
+			((JButton) componente).addActionListener(new ActionElegirColor(this));
 		}
 	}
+
+	public Estructura getControl() {
+		return control;
+	}
+
+	public AccionesParaUI getAccionesParaUI() {
+		return accionesParaUI;
+	}
+	
 }

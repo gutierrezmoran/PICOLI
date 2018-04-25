@@ -1,20 +1,21 @@
 package modelo;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
-public class Lista extends ArrayList<Colores> {
+public class Lista extends ArrayList<Color> {
 
-	private ArrayList<Colores> lista;
+	private ArrayList<Color> lista;
 
 	public Lista() {
-		this.lista = new ArrayList<Colores>();
+		this.lista = new ArrayList<Color>();
 	}
 
-	public ArrayList<Colores> getLista() {
+	public ArrayList<Color> getLista() {
 		return lista;
 	}
 
-	public void alistar(Colores color) {
+	public void alistar(Color color) {
 		lista.add(color);
 	}
 

@@ -1,24 +1,25 @@
 package modelo;
 
+import java.awt.Color;
 import java.util.ArrayDeque;
 
-public class Cola extends ArrayDeque<Colores>{
+public class Cola extends ArrayDeque<Color>{
 
-	private ArrayDeque<Colores> cola;
+	private ArrayDeque<Color> cola;
 
 	public Cola() {
-		this.cola = new ArrayDeque<Colores>();
+		this.cola = new ArrayDeque<Color>();
 	}
 
-	public ArrayDeque<Colores> getCola() {
+	public ArrayDeque<Color> getCola() {
 		return cola;
 	}
 
-	public void encolar(Colores color) {
+	public void encolar(Color color) {
 		cola.add(color);
 	} 
 
-	public Colores desencolar() {
+	public Color desencolar() {
 		return cola.pop();
 	}
 }
