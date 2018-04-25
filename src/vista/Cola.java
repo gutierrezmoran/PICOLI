@@ -1,13 +1,12 @@
 package vista;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import modelo.Colores;
 import utiles.Constantes;
 
 public class Cola extends JPanel {
@@ -16,11 +15,12 @@ public class Cola extends JPanel {
 		this.setLayout(new GridLayout(1, Constantes.TAMANO_COLA, 0, 0));
 	}
 	
-	public void agregarColor(Colores color, int posicion) {
+	public void agregarColor(Color color) {
 		JLabel label = new JLabel();
-		label.setBackground(color.getColor());
+		label.setBackground(color);
 		label.setBorder(new EmptyBorder(3, 3, 3, 3));
-		label.setFont(new Font("Arial", Font.PLAIN, 9));
+		label.setFont(new Font("Arial", Font.BOLD, 10));
+		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setOpaque(true);
 		
 		this.add(label);

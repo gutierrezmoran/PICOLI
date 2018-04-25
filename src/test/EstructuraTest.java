@@ -1,12 +1,13 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.awt.Color;
 import java.util.AbstractCollection;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Stack;
 import org.junit.jupiter.api.Test;
-import modelo.Colores;
 import modelo.Estructura;
 import utiles.Constantes;
 
@@ -21,14 +22,14 @@ class EstructuraTest {
 
 	@Test
 	void testRealizarJugada() {
-		estructura.realizarJugada(Colores.amarillo);
+		estructura.realizarJugada(Color.YELLOW);
 		
 		for (int i = 0; i < 4; i++) {
-			estructura.getPilas().get(0).getPila().add(Colores.amarillo);
-			estructura.getPilas().get(1).getPila().add(Colores.amarillo);
+			estructura.getPilas().get(0).getPila().add(Color.YELLOW);
+			estructura.getPilas().get(1).getPila().add(Color.YELLOW);
 		}
 
-		estructura.realizarJugada(Colores.azul);
+		estructura.realizarJugada(Color.BLUE);
 		assert(!estructura.getLista().getLista().isEmpty());
 	}
 
@@ -39,45 +40,45 @@ class EstructuraTest {
 		final int limiteBajo = 2;
 		final int limiteIgual = 5;
 
-		ArrayList<AbstractCollection<Colores>> colecciones = new ArrayList<>();
+		ArrayList<AbstractCollection<Color>> colecciones = new ArrayList<>();
 
-		colecciones.add(new ArrayDeque<Colores>());
-		colecciones.add(new Stack<Colores>());
-		colecciones.add(new ArrayList<Colores>());
+		colecciones.add(new ArrayDeque<Color>());
+		colecciones.add(new Stack<Color>());
+		colecciones.add(new ArrayList<Color>());
 
 		for (int i = 0; i < colecciones.size(); i++) {
 			for (int j = 0; j < 5; j++) {
-				((AbstractCollection<Colores>) colecciones.get(i)).add(Colores.amarillo);
+				((AbstractCollection<Color>) colecciones.get(i)).add(Color.YELLOW);
 			}
 		}
 
 		for (int i = 0; i < 3; i++) {
 			System.out.println("PROBANDO SI COLECCION " + i);
 			System.out.println("	* esta llena");
-			assertTrue(Estructura.isColeccionLlena(colecciones.get(i), limiteBajo));
+			assertTrue(this.estructura.isColeccionLlena(colecciones.get(i), limiteBajo));
 			System.out.println("	* esta al limite");
-			assertTrue(Estructura.isColeccionLlena(colecciones.get(i), limiteIgual));
+			assertTrue(this.estructura.isColeccionLlena(colecciones.get(i), limiteIgual));
 			System.out.println("	* esta sobrante");
-			assertFalse(Estructura.isColeccionLlena(colecciones.get(i), limiteAlto));
+			assertFalse(this.estructura.isColeccionLlena(colecciones.get(i), limiteAlto));
 		}
 
 	}
 
 	@Test
 	void testIsColoresIgualesContiguos() {
-		ArrayList<Colores> coloresContiguos = new ArrayList<>();
-		ArrayList<Colores> coloresNoContiguos = new ArrayList<>();
+		ArrayList<Color> coloresContiguos = new ArrayList<>();
+		ArrayList<Color> coloresNoContiguos = new ArrayList<>();
 
 		for (int i = 0; i < 2; i++) {
-			coloresContiguos.add(Colores.amarillo);
-			coloresContiguos.add(Colores.azul);
-			coloresContiguos.add(Colores.amarillo);
-			coloresNoContiguos.add(Colores.naranja);
-			coloresNoContiguos.add(Colores.rojo);
+			coloresContiguos.add(Color.YELLOW);
+			coloresContiguos.add(Color.BLUE);
+			coloresContiguos.add(Color.YELLOW);
+			coloresNoContiguos.add(Color.ORANGE);
+			coloresNoContiguos.add(Color.RED);
 		}
 
-		assertTrue(Estructura.isColoresIgualesContiguos(coloresContiguos));
-		assertFalse(Estructura.isColoresIgualesContiguos(coloresNoContiguos));
+		assertTrue(this.estructura.isColoresIgualesContiguos(coloresContiguos));
+		assertFalse(this.estructura.isColoresIgualesContiguos(coloresNoContiguos));
 	}
 
 }

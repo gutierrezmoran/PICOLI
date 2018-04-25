@@ -1,35 +1,76 @@
 package modelo;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import utiles.Constantes;
+import utiles.Utiles;
 
 public class Historial {
 
-	private ArrayList<Colores> listaColores;
+	private ArrayList<Color> historialColoresUsados;
+	private ArrayList<Color> coloresParaElegir;
 
 	public Historial() {
-		this.listaColores = new ArrayList<>();
+		this.historialColoresUsados = new ArrayList<>();
+		this.coloresParaElegir = new ArrayList<>();
 	}
-
-	public ArrayList<Colores> getListaColores() {
-		return listaColores;
+	
+	private void sortearColores() {
+		boolean seleccionable;
+		for (int i = 0; i < Constantes.CANTIDAD_COLORES_SELECCION; i++) {
+			seleccionable = false;
+			do {
+				Color color = Colores.getElement(Utiles.generarNumeroAleatorio(0, Constantes.PETICION_COLOR_MAX));
+				if(!buscarCoincidenciasHistorial(color) && !buscarCoincidenciasSeleccionados(color)) {
+					agregarColorSeleccionado(color);
+					seleccionable = true;
+				}
+			} while(!seleccionable);
+		}
+	}
+	
+	private void borrarColoresSeleccinados() {
+		this.coloresParaElegir.clear();
 	}
 
 	/**
 	 * Comprueba si existen más de dos coincidencias de colores en el historial
 	 * 
 	 * @param color
-	 * @param historial
+	 * @param historialColoresUsados
 	 * @return
 	 */
-	public boolean buscarCoincidencias(Colores color, ArrayList<Colores> historial) {
+	public boolean buscarCoincidenciasHistorial(Color color) {
 		int coincidencias = 0;
-		for (Colores colores : historial) {
+		for (Color colores : this.historialColoresUsados) {
 			if (colores == color) {
 				coincidencias++;
 			}
 		}
 		return coincidencias >= 2;
+	}
+	
+	public boolean buscarCoincidenciasSeleccionados(Color color) {
+		for (Color colores : this.coloresParaElegir) {
+			if(colores == color) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+	
+	public ArrayList<Color> getColoresSeleccionados() {
+		return coloresParaElegir;
+	}
+	
+	public void renovarColores() {
+		borrarColoresSeleccinados();
+		sortearColores();
+	}
+	
+	public void agregarColorSeleccionado(Color color) {
+		this.coloresParaElegir.add(color);
 	}
 
 	/**
@@ -37,12 +78,12 @@ public class Historial {
 	 * 
 	 * @param color
 	 */
-	public void sustituirColor(Colores color) {
-		if (listaColores.size() >= Constantes.TAMANO_HISTORICO) {
-			listaColores.remove(0);
-			listaColores.add(color);
+	public void actualizarHistorial(Color color) {
+		if (isHistorialCompleto()) {
+			historialColoresUsados.remove(0);
+			historialColoresUsados.add(color);
 		} else {
-			listaColores.add(color);
+			historialColoresUsados.add(color);
 		}
 	}
 
@@ -51,7 +92,11 @@ public class Historial {
 	 * 
 	 * @return Retorna true si el historial esta completo o false en caso contrario
 	 */
-	public boolean comprobarHistorialCompleto() {
-		return listaColores.size() >= Constantes.TAMANO_HISTORICO;
+	public boolean isHistorialCompleto() {
+		return historialColoresUsados.size() >= Constantes.TAMANO_HISTORICO;
+	}
+	
+	public ArrayList<Color> getListaColores() {
+		return historialColoresUsados;
 	}
 }
