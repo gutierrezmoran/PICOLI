@@ -12,68 +12,60 @@ public class Estructura {
 	private Cola cola;
 	private ArrayList<Pila> pilas;
 	private Lista lista;
-	private int monedas;
-	private Historial historial;
-
-	public int getMonedas() {
-		return monedas;
-	}
-
-	public void setMonedas(int monedas) {
-		this.monedas = monedas;
-	}
+	private Tesoro tesoro;
+	private HistorialColores historialColores;
+	private PaletaDeColores paletaDeColores;
 
 	public Estructura() {
 		this.cola = new Cola();
 		this.pilas = new ArrayList<>();
 		this.lista = new Lista();
-		this.historial = new Historial();
-		inicializarCola();
+		this.tesoro = new Tesoro();
+		this.historialColores = new HistorialColores();
+		this.paletaDeColores = new PaletaDeColores(historialColores);
+		inicializar();
+	}
+
+	public void inicializar() {
+		this.cola.inicializar();
 		inicializarPilas();
 	}
 
-	public Historial getHistorial() {
-		return historial;
+	public void reiniciar() {
+		this.cola.reiniciar();
+		this.lista.reiniciar();
+		this.tesoro.reiniciar();
+		this.historialColores.limpiar();
+		this.paletaDeColores.limpiar();
+		reiniciarPilas();
 	}
 
-	public Cola getCola() {
-		return cola;
+	private void reiniciarPilas() {
+		this.pilas.get(0).limpiar();
+		this.pilas.get(1).limpiar();
+		inicializarPilas();
 	}
 
-	public ArrayList<Pila> getPilas() {
-		return pilas;
-	}
-
-	public Lista getLista() {
-		return lista;
-	}
-
-	public void inicializarCola() {
-		for (int i = 0; i < Constantes.TAMANO_COLA; i++) {
-			this.cola.encolar(Colores.getElement(Utiles.generarNumeroAleatorio(1, 5)));
-		}
-	}
-	
-	public void inicializarPilas() {
-		for (int i = 0; i < 2; i++) {
+	private void inicializarPilas() {
+		for (int i = 0; i < Constantes.CANTIDAD_PILAS; i++) {
 			this.pilas.add(new Pila());
 		}
 	}
 
 	public boolean realizarJugada(Color color) {
 		this.cola.encolar(color);
-		this.historial.actualizarHistorial(color);
+		this.historialColores.actualizar(color);
 		int pilaSeleccionada = getIndicePilaAleatoria();
 		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
-		
+
 		if (isColeccionLlena(this.pilas.get(pilaSeleccionada).getPila(), Constantes.TAMANO_PILA)) {
 			this.lista.alistar(this.pilas.get(pilaSeleccionada).desapilar());
 		}
-		
+
 		while (isColoresIgualesContiguos(this.lista.getLista())) {
 			this.lista.desalistarRepetidos(getColorIgualContiguo(this.lista.getLista()));
-			incrementarMonedas();
-			if (isMonedasGanadoras()) {
+			this.tesoro.incrementar();
+			if (this.tesoro.isLleno()) {
 				return true;
 			}
 		}
@@ -82,13 +74,6 @@ public class Estructura {
 		}
 
 		return false;
-	}
-
-	/**
-	 * Incrementa las monedas (+2)
-	 */
-	private void incrementarMonedas() {
-		this.monedas+=2;
 	}
 
 	/**
@@ -135,18 +120,6 @@ public class Estructura {
 	}
 
 	/**
-	 * Comprueba si se ha superado-igualado o no la cantidad de monedas necesarias
-	 * para ganar la partida
-	 * 
-	 * @param monedas
-	 * @return Retorna TRUE si se ha igualado o superado la cantidad de monedas o
-	 *         FALSE en caso contrario
-	 */
-	public boolean isMonedasGanadoras() {
-		return this.monedas >= Constantes.CANTIDAD_MAX_MONEDAS;
-	}
-
-	/**
 	 * 
 	 * Comprueba la posicion del color repetido en una coleccion
 	 * 
@@ -173,6 +146,34 @@ public class Estructura {
 			return ((Stack<Color>) coleccion).get(posicion);
 		}
 		return ((ArrayList<Color>) coleccion).get(posicion);
+	}
+
+	public HistorialColores getHistorialColores() {
+		return historialColores;
+	}
+
+	public Cola getCola() {
+		return cola;
+	}
+
+	public ArrayList<Pila> getPilas() {
+		return pilas;
+	}
+
+	public Lista getLista() {
+		return lista;
+	}
+
+	public PaletaDeColores getPaletaDeColores() {
+		return paletaDeColores;
+	}
+
+	public boolean isLleno() {
+		return tesoro.isLleno();
+	}
+
+	public int getMonedas() {
+		return tesoro.getMonedas();
 	}
 
 }

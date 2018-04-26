@@ -24,4 +24,8 @@ public class Lista extends ArrayList<Color> {
 			this.lista.remove(posicion);
 		}
 	}
+
+	public void reiniciar() {
+		this.lista.clear();
+	}
 }

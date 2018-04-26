@@ -1,35 +1,44 @@
 package vista;
 
 import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Dimension;
-import javax.swing.border.LineBorder;
-import javax.swing.ImageIcon;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import java.awt.GridBagLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
-import javax.swing.UIManager;
-import java.awt.SystemColor;
 
 public class UI extends JFrame {
 
 	private JPanel contentPane;
-	protected Cola cola;
-	protected Pila pilaUno;
-	protected Pila pilaDos;
-	protected Lista lista;
-	protected SeleccionColores panelColores;
-	protected JLabel cantidadMonedas;
+	private JPanel panelTituloJuego;
+	private Cola cola;
+	private Pila pilaUno;
+	private Pila pilaDos;
+	private Lista lista;
+	private SeleccionColores panelColores;
+	private JLabel cantidadMonedas;
+	private JPanel panelPrincipal;
+	protected JButton reiniciar;
 
 	public UI() {
+		crearFrame();
+		crearCabezera();
+		crearPanelPrincipal();
+	}
+	
+	public void crearFrame() {
 		setTitle("PICOLI");
 		setMinimumSize(new Dimension(1000, 600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,10 +48,12 @@ public class UI extends JFrame {
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
-		JPanel panelTituloJuego = new JPanel();
+	}
+	
+	private void crearCabezera() {
+		panelTituloJuego = new JPanel();
 		panelTituloJuego.setBackground(new Color(0, 128, 128));
-		contentPane.add(panelTituloJuego, BorderLayout.NORTH);
+		this.contentPane.add(panelTituloJuego, BorderLayout.NORTH);
 		panelTituloJuego.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("PICOLI");
@@ -50,11 +61,20 @@ public class UI extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panelTituloJuego.add(lblNewLabel);
-		
-		JPanel panelPrincipal = new JPanel();
+	}
+	
+	public void crearPanelPrincipal() {
+		panelPrincipal = new JPanel();
 		contentPane.add(panelPrincipal, BorderLayout.CENTER);
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		
+		crearCola();
+		crearPilas();
+		crearControl();
+		crearLista();
+	}
+	
+	private void crearCola() {
 		JPanel panelCola = new JPanel();
 		panelCola.setBorder(new EmptyBorder(10, 20, 5, 20));
 		panelPrincipal.add(panelCola, BorderLayout.NORTH);
@@ -91,7 +111,9 @@ public class UI extends JFrame {
 		panelPieCola.add(lblNewLabel_3, BorderLayout.EAST);
 		lblNewLabel_3.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
+	}
+	
+	private void crearPilas() {
 		JPanel panelPilas = new JPanel();
 		panelPilas.setBorder(new EmptyBorder(5, 20, 10, 20));
 		panelPrincipal.add(panelPilas, BorderLayout.WEST);
@@ -126,7 +148,31 @@ public class UI extends JFrame {
 		lblPilas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPilas.setFont(new Font("Gadugi", Font.BOLD, 14));
 		panelPilas.add(lblPilas, BorderLayout.NORTH);
+	}
+	
+	private void crearLista() {
+		lista = new Lista();
+		GridLayout gridLayout_1 = (GridLayout) lista.getLayout();
+		gridLayout_1.setColumns(1);
+		gridLayout_1.setRows(5);
+		lista.setBorder(new LineBorder(new Color(0, 0, 0)));
+		lista.setBackground(Color.white);
 		
+		
+		JPanel panelLista = new JPanel();
+		panelLista.setBorder(new EmptyBorder(5, 20, 10, 20));
+		panelPrincipal.add(panelLista, BorderLayout.CENTER);
+		panelLista.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblLista = new JLabel("LISTA");
+		lblLista.setBorder(new EmptyBorder(0, 0, 5, 0));
+		lblLista.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLista.setFont(new Font("Gadugi", Font.BOLD, 14));
+		panelLista.add(lblLista, BorderLayout.NORTH);
+		panelLista.add(lista);
+	}
+	
+	private void crearControl() {
 		JPanel panelInferior = new JPanel();
 		panelInferior.setPreferredSize(new Dimension(10, 70));
 		panelInferior.setMinimumSize(new Dimension(10, 50));
@@ -145,7 +191,7 @@ public class UI extends JFrame {
 		panelBotones.setLayout(gbl_panelBotones);
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new EmptyBorder(4, 4, 4, 4));
+		panel.setBorder(new EmptyBorder(4, 4, 0, 4));
 		panel.setBackground(UIManager.getColor("TabbedPane.light"));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.fill = GridBagConstraints.BOTH;
@@ -212,29 +258,50 @@ public class UI extends JFrame {
 		cantidadMonedas = new JLabel("0");
 		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panelMonedas.add(cantidadMonedas, BorderLayout.EAST);
+	}
+	
+	public void crearMenu(boolean estado) {
+		this.panelPrincipal.removeAll();
 		
+		if(estado) {
+			crearMenuVictoria();
+		} else {
+			crearMenuDerrota();
+		}
 		
-		lista = new Lista();
-		GridLayout gridLayout_1 = (GridLayout) lista.getLayout();
-		gridLayout_1.setColumns(1);
-		gridLayout_1.setRows(5);
-		lista.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lista.setBackground(Color.white);
-		
-		
-		JPanel panelLista = new JPanel();
-		panelLista.setBorder(new EmptyBorder(5, 20, 10, 20));
-		panelPrincipal.add(panelLista, BorderLayout.CENTER);
-		panelLista.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblLista = new JLabel("LISTA");
-		lblLista.setBorder(new EmptyBorder(0, 0, 5, 0));
-		lblLista.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLista.setFont(new Font("Gadugi", Font.BOLD, 14));
-		panelLista.add(lblLista, BorderLayout.NORTH);
-		panelLista.add(lista);
+		reiniciar = new JButton("REINICIAR");
+		reiniciar.setBorder(new EmptyBorder(50, 5, 50, 5));
+		this.panelPrincipal.add(reiniciar, BorderLayout.SOUTH);
+	}
+	
+	private void crearMenuVictoria() {
+		this.panelPrincipal.setBackground(Color.GREEN);
+
+		JLabel mensajePartida = new JLabel("PICOLI WIN");
+		mensajePartida.setFont(new Font("Arial", Font.BOLD, 60));
+		mensajePartida.setForeground(Color.WHITE);
+		mensajePartida.setHorizontalAlignment(SwingConstants.CENTER);
+		this.panelPrincipal.add(mensajePartida, BorderLayout.CENTER);
+	}
+	
+	private void crearMenuDerrota() {
+		this.panelPrincipal.setBackground(Color.RED);
+
+		JLabel mensajePartida = new JLabel("PICOLI OVER");
+		mensajePartida.setFont(new Font("Arial", Font.BOLD, 60));
+		mensajePartida.setForeground(Color.WHITE);
+		mensajePartida.setHorizontalAlignment(SwingConstants.CENTER);
+		this.panelPrincipal.add(mensajePartida, BorderLayout.CENTER);
 	}
 
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+	
+	public JPanel getPanelTituloJuego() {
+		return panelTituloJuego;
+	}
+	
 	public SeleccionColores getPanelColores() {
 		return panelColores;
 	}
@@ -254,13 +321,13 @@ public class UI extends JFrame {
 	public Pila getPilaDos() {
 		return pilaDos;
 	}
-
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-
+	
 	public Lista getLista() {
 		return lista;
+	}
+
+	public JPanel getPanelPrincipal() {
+		return panelPrincipal;
 	}
 
 }

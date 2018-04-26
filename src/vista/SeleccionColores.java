@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 public class SeleccionColores extends JPanel {
 	
-	public void agregarColor(Color color) {
+	public void agregar(Color color) {
 		JButton boton = new JButton();
 		boton.setBackground(color);
 		boton.setBorder(new EmptyBorder(3, 3, 3, 3));
