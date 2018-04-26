@@ -335,14 +335,6 @@ public class UI extends JFrame {
 		this.panelPrincipal.add(mensajePartida, BorderLayout.CENTER);
 	}
 
-	@Override
-	public Image getIconImage() {
-		String imagen = "/assets/icon" + Utiles.generarNumeroAleatorio(0, 5) + ".png";
-		Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource(imagen));
-
-		return retValue;
-	}
-
 	public JPanel getContentPane() {
 		return contentPane;
 	}
