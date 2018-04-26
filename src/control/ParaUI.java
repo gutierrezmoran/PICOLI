@@ -9,19 +9,23 @@ public class ParaUI extends UI {
 
 	private Estructura control = new Estructura();
 	private AccionesParaUI accionesParaUI = new AccionesParaUI(this);
-	
+
 	public ParaUI() {
-		establecerListenersColores();
+		establecerListeners();
 	}
-	
+
 	public void establecerListeners() {
 		establecerListenersColores();
 	}
 
-	private void establecerListenersColores() {
-		for (Component componente : panelColores.getComponents()) {
+	public void establecerListenersColores() {
+		for (Component componente : getPanelColores().getComponents()) {
 			((JButton) componente).addActionListener(new ActionElegirColor(this));
 		}
+	}
+
+	public void establecerListenerReiniciar() {
+		reiniciar.addActionListener(new ActionReiniciar(this));
 	}
 
 	public Estructura getControl() {
@@ -31,5 +35,5 @@ public class ParaUI extends UI {
 	public AccionesParaUI getAccionesParaUI() {
 		return accionesParaUI;
 	}
-	
+
 }

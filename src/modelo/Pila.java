@@ -22,4 +22,8 @@ public class Pila extends Stack<Color> {
 	public Color desapilar() {
 		return pila.pop();
 	}
+
+	public void limpiar() {
+		this.pila.clear();
+	}
 }
