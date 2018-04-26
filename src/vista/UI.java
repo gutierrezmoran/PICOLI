@@ -1,27 +1,32 @@
 package vista;
 
 import java.awt.BorderLayout;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
+import control.JPanelBackgroundImage;
+import font.CustomFont;
+import utiles.Utiles;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
+import java.awt.Image;
+import java.awt.Cursor;
+import javax.swing.border.LineBorder;
+import java.awt.SystemColor;
+import java.awt.Toolkit;
 
 public class UI extends JFrame {
 
-	private JPanel contentPane;
+	private CustomFont customFont = new CustomFont("Patchwork Stitchlings Color.ttf");
+	private Color colorBackgroundPaneles = new Color(255, 255, 255, 100);
+	private JPanelBackgroundImage contentPane;
 	private JPanel panelTituloJuego;
 	private Cola cola;
 	private Pila pilaUno;
@@ -33,247 +38,283 @@ public class UI extends JFrame {
 	protected JButton reiniciar;
 
 	public UI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UI.class.getResource("/assets/icon.png")));
 		crearFrame();
 		crearCabezera();
 		crearPanelPrincipal();
 	}
-	
+
 	public void crearFrame() {
+		// setExtendedState(MAXIMIZED_BOTH);
 		setTitle("PICOLI");
 		setMinimumSize(new Dimension(1000, 600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(204, 255, 255));
+
+		contentPane = new JPanelBackgroundImage("/assets/bg.jpg");
+		contentPane.setOpaque(false);
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 	}
-	
+
 	private void crearCabezera() {
 		panelTituloJuego = new JPanel();
 		panelTituloJuego.setBackground(new Color(0, 128, 128));
 		this.contentPane.add(panelTituloJuego, BorderLayout.NORTH);
 		panelTituloJuego.setLayout(new BorderLayout(0, 0));
-		
+
 		JLabel lblNewLabel = new JLabel("PICOLI");
+		lblNewLabel.setBorder(new EmptyBorder(10, 0, 10, 0));
 		lblNewLabel.setForeground(new Color(253, 245, 230));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
+		lblNewLabel.setFont(this.customFont.MyFont(0, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panelTituloJuego.add(lblNewLabel);
 	}
-	
+
 	public void crearPanelPrincipal() {
 		panelPrincipal = new JPanel();
+		panelPrincipal.setOpaque(false);
 		contentPane.add(panelPrincipal, BorderLayout.CENTER);
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
-		
+
 		crearCola();
 		crearPilas();
 		crearControl();
 		crearLista();
 	}
-	
+
 	private void crearCola() {
 		JPanel panelCola = new JPanel();
+		panelCola.setOpaque(false);
 		panelCola.setBorder(new EmptyBorder(10, 20, 5, 20));
 		panelPrincipal.add(panelCola, BorderLayout.NORTH);
 		panelCola.setLayout(new BorderLayout(0, 0));
 
 		this.cola = new Cola();
+		cola.setOpaque(false);
 		GridLayout gridLayout = (GridLayout) cola.getLayout();
 		gridLayout.setHgap(5);
 		panelCola.add(cola, BorderLayout.CENTER);
 		cola.setPreferredSize(new Dimension(10, 80));
 		cola.setMinimumSize(new Dimension(10, 80));
-		
+
 		JPanel panelCabeceraCola = new JPanel();
+		panelCabeceraCola.setOpaque(false);
 		panelCola.add(panelCabeceraCola, BorderLayout.NORTH);
 		panelCabeceraCola.setLayout(new BorderLayout(0, 0));
-		
+
 		JLabel lblNewLabel_1 = new JLabel("COLA");
 		lblNewLabel_1.setBorder(new EmptyBorder(0, 0, 5, 0));
 		panelCabeceraCola.add(lblNewLabel_1, BorderLayout.NORTH);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1.setFont(new Font("Gadugi", Font.BOLD, 14));
-		
+		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));
+
 		JPanel panelPieCola = new JPanel();
+		panelPieCola.setOpaque(false);
 		panelPieCola.setBorder(null);
 		panelCola.add(panelPieCola, BorderLayout.SOUTH);
 		panelPieCola.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblNewLabel_2 = new JLabel("Salida");
+
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(UI.class.getResource("/assets/rojaAbajo.png")));
 		panelPieCola.add(lblNewLabel_2, BorderLayout.WEST);
 		lblNewLabel_2.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
-		JLabel lblNewLabel_3 = new JLabel("Entrada");
+
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(UI.class.getResource("/assets/verdeIzquierda.png")));
 		panelPieCola.add(lblNewLabel_3, BorderLayout.EAST);
 		lblNewLabel_3.setBorder(new EmptyBorder(5, 5, 5, 5));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 	}
-	
+
 	private void crearPilas() {
 		JPanel panelPilas = new JPanel();
+		panelPilas.setOpaque(false);
 		panelPilas.setBorder(new EmptyBorder(5, 20, 10, 20));
 		panelPrincipal.add(panelPilas, BorderLayout.WEST);
 		panelPilas.setLayout(new BorderLayout(5, 0));
-		
+
 		JPanel panelPila_1 = new JPanel();
-		panelPila_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelPila_1.setBorder(null);
 		panelPila_1.setPreferredSize(new Dimension(60, 10));
 		panelPila_1.setMinimumSize(new Dimension(30, 10));
-		panelPila_1.setBackground(Color.WHITE);
 		panelPilas.add(panelPila_1, BorderLayout.WEST);
 		panelPila_1.setLayout(new BorderLayout(0, 0));
-		
-		pilaUno= new Pila();
+
+		pilaUno = new Pila();
 		pilaUno.setBorder(null);
-		pilaUno.setBackground(Color.WHITE);
+		pilaUno.setBackground(this.colorBackgroundPaneles);
 		panelPila_1.add(pilaUno);
-		
+
 		JPanel panelPila_2 = new JPanel();
-		panelPila_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelPila_2.setBorder(null);
 		panelPila_2.setPreferredSize(new Dimension(60, 10));
-		panelPila_2.setBackground(Color.WHITE);
 		panelPilas.add(panelPila_2, BorderLayout.EAST);
 		panelPila_2.setLayout(new BorderLayout(0, 0));
-		
-		pilaDos= new Pila();
-		pilaDos.setBackground(Color.WHITE);
+
+		pilaDos = new Pila();
+		pilaDos.setBorder(null);
+		pilaDos.setBackground(this.colorBackgroundPaneles);
 		panelPila_2.add(pilaDos, BorderLayout.CENTER);
-		
+
 		JLabel lblPilas = new JLabel("PILAS");
 		lblPilas.setBorder(new EmptyBorder(0, 0, 5, 0));
-		lblPilas.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPilas.setFont(new Font("Gadugi", Font.BOLD, 14));
+		lblPilas.setHorizontalAlignment(SwingConstants.LEFT);
+		lblPilas.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));
 		panelPilas.add(lblPilas, BorderLayout.NORTH);
 	}
-	
+
 	private void crearLista() {
 		lista = new Lista();
 		GridLayout gridLayout_1 = (GridLayout) lista.getLayout();
 		gridLayout_1.setColumns(1);
 		gridLayout_1.setRows(5);
-		lista.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lista.setBackground(Color.white);
-		
-		
+		lista.setBorder(null);
+		lista.setBackground(this.colorBackgroundPaneles);
+
 		JPanel panelLista = new JPanel();
+		panelLista.setOpaque(false);
 		panelLista.setBorder(new EmptyBorder(5, 20, 10, 20));
 		panelPrincipal.add(panelLista, BorderLayout.CENTER);
 		panelLista.setLayout(new BorderLayout(0, 0));
-		
+
 		JLabel lblLista = new JLabel("LISTA");
 		lblLista.setBorder(new EmptyBorder(0, 0, 5, 0));
-		lblLista.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLista.setFont(new Font("Gadugi", Font.BOLD, 14));
+		lblLista.setHorizontalAlignment(SwingConstants.LEFT);
+		lblLista.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));
 		panelLista.add(lblLista, BorderLayout.NORTH);
 		panelLista.add(lista);
 	}
-	
+
 	private void crearControl() {
 		JPanel panelInferior = new JPanel();
+		panelInferior.setOpaque(false);
 		panelInferior.setPreferredSize(new Dimension(10, 70));
 		panelInferior.setMinimumSize(new Dimension(10, 50));
 		panelInferior.setBorder(new EmptyBorder(10, 20, 10, 20));
 		panelPrincipal.add(panelInferior, BorderLayout.SOUTH);
-		panelInferior.setLayout(new BorderLayout(30, 0));
-		
+		panelInferior.setLayout(new BorderLayout(95, 0));
+
 		JPanel panelBotones = new JPanel();
+		panelBotones.setOpaque(false);
 		panelBotones.setPreferredSize(new Dimension(10, 20));
 		panelInferior.add(panelBotones);
-		GridBagLayout gbl_panelBotones = new GridBagLayout();
-		gbl_panelBotones.columnWidths = new int[] {300, 182, 182, 182, 0};
-		gbl_panelBotones.rowHeights = new int[]{60, 0};
-		gbl_panelBotones.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
-		gbl_panelBotones.rowWeights = new double[]{1.0, Double.MIN_VALUE};
-		panelBotones.setLayout(gbl_panelBotones);
-		
+		panelBotones.setLayout(new BorderLayout(0, 0));
+
 		JPanel panel = new JPanel();
-		panel.setBorder(new EmptyBorder(4, 4, 0, 4));
-		panel.setBackground(UIManager.getColor("TabbedPane.light"));
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.fill = GridBagConstraints.BOTH;
-		gbc_panel.insets = new Insets(0, 0, 0, 5);
-		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 0;
-		panelBotones.add(panel, gbc_panel);
+		panel.setPreferredSize(new Dimension(400, 10));
+		panel.setOpaque(false);
+		panel.setBorder(null);
+		panelBotones.add(panel, BorderLayout.WEST);
 		panel.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblSeleccionaUnColor = new JLabel("Selecciona un color");
-		lblSeleccionaUnColor.setFont(new Font("Nirmala UI", Font.BOLD, 9));
+
+		JLabel lblSeleccionaUnColor = new JLabel("SELECCIONA UN COLOR");
+		lblSeleccionaUnColor.setFont(new Font("Alef", Font.BOLD, 12));
 		lblSeleccionaUnColor.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblSeleccionaUnColor.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(lblSeleccionaUnColor, BorderLayout.NORTH);
-		
+
 		panelColores = new SeleccionColores();
 		panelColores.setOpaque(false);
 		panelColores.setBorder(null);
 		panel.add(panelColores, BorderLayout.CENTER);
 		panelColores.setLayout(new GridLayout(1, 5, 5, 0));
-		
-		JButton borrarColor = new JButton("Borrar Color");
-		borrarColor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+
+		JPanel panelComodines = new JPanel();
+		panelComodines.setOpaque(false);
+		panelBotones.add(panelComodines, BorderLayout.EAST);
+		panelComodines.setLayout(new BorderLayout(0, 0));
+
+		JPanel panelIconos = new JPanel();
+		panelIconos.setOpaque(false);
+		panelComodines.add(panelIconos, BorderLayout.NORTH);
+		panelIconos.setLayout(new GridLayout(0, 3, 20, 0));
+
+		JButton borrarColor = new JButton("");
+		borrarColor.setToolTipText(
+				"Permite elegir un color que eliminar\u00E1 todos aquellos iguales que se encuentren en la lista");
+		panelIconos.add(borrarColor);
+		borrarColor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		borrarColor.setContentAreaFilled(false);
+		borrarColor.setBorderPainted(false);
+		borrarColor.setOpaque(false);
+		borrarColor.setIcon(new ImageIcon(UI.class.getResource("/assets/goma.png")));
+		borrarColor.setBorder(null);
+		borrarColor.setFont(new Font("Tahoma", Font.BOLD, 20));
 		borrarColor.setFocusPainted(false);
-		borrarColor.setBackground(Color.WHITE);
-		GridBagConstraints gbc_borrarColor = new GridBagConstraints();
-		gbc_borrarColor.fill = GridBagConstraints.BOTH;
-		gbc_borrarColor.insets = new Insets(0, 0, 0, 5);
-		gbc_borrarColor.gridx = 1;
-		gbc_borrarColor.gridy = 0;
-		panelBotones.add(borrarColor, gbc_borrarColor);
-		
-		JButton pedirColor = new JButton("Pedir Color");
+
+		JButton pedirColor = new JButton("");
+		pedirColor.setToolTipText("Permite seleccionar un color de los 5 disponibles");
+		panelIconos.add(pedirColor);
+		pedirColor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		pedirColor.setContentAreaFilled(false);
+		pedirColor.setBorderPainted(false);
+		pedirColor.setBorder(null);
+		pedirColor.setOpaque(false);
+		pedirColor.setIcon(new ImageIcon(UI.class.getResource("/assets/paleta.png")));
 		pedirColor.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		pedirColor.setFocusPainted(false);
-		pedirColor.setBackground(Color.WHITE);
-		GridBagConstraints gbc_pedirColor = new GridBagConstraints();
-		gbc_pedirColor.fill = GridBagConstraints.BOTH;
-		gbc_pedirColor.insets = new Insets(0, 0, 0, 5);
-		gbc_pedirColor.gridx = 2;
-		gbc_pedirColor.gridy = 0;
-		panelBotones.add(pedirColor, gbc_pedirColor);
-		
-		JButton barajarPila = new JButton("Barajar Pila");
+
+		JButton barajarPila = new JButton("");
+		barajarPila.setToolTipText("Baraja las pilas alterando su orden actual y equilibr\u00E1ndolas");
+		panelIconos.add(barajarPila);
+		barajarPila.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		barajarPila.setContentAreaFilled(false);
+		barajarPila.setBorderPainted(false);
+		barajarPila.setOpaque(false);
+		barajarPila.setBorder(null);
+		barajarPila.setIcon(new ImageIcon(UI.class.getResource("/assets/barajar.png")));
 		barajarPila.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		barajarPila.setFocusPainted(false);
-		barajarPila.setBackground(Color.WHITE);
-		GridBagConstraints gbc_barajarPila = new GridBagConstraints();
-		gbc_barajarPila.fill = GridBagConstraints.BOTH;
-		gbc_barajarPila.gridx = 3;
-		gbc_barajarPila.gridy = 0;
-		panelBotones.add(barajarPila, gbc_barajarPila);
-		
+
+		JPanel panelCantidades = new JPanel();
+		panelCantidades.setOpaque(false);
+		panelComodines.add(panelCantidades, BorderLayout.SOUTH);
+		panelCantidades.setLayout(new GridLayout(0, 3, 20, 0));
+
+		JLabel labelBorrarColor = new JLabel("0");
+		labelBorrarColor.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCantidades.add(labelBorrarColor);
+
+		JLabel labelPedirColor = new JLabel("0");
+		labelPedirColor.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCantidades.add(labelPedirColor);
+
+		JLabel labelBarajarPila = new JLabel("0");
+		labelBarajarPila.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCantidades.add(labelBarajarPila);
+
 		JPanel panelMonedas = new JPanel();
-		panelMonedas.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
+		panelMonedas.setOpaque(false);
 		panelMonedas.setBorder(new EmptyBorder(10, 10, 10, 10));
 		panelInferior.add(panelMonedas, BorderLayout.WEST);
 		panelMonedas.setLayout(new BorderLayout(5, 0));
-		
+
 		JLabel moneda = new JLabel("");
 		moneda.setIcon(new ImageIcon(UI.class.getResource("/assets/coin.gif")));
 		panelMonedas.add(moneda, BorderLayout.WEST);
-		
+
 		cantidadMonedas = new JLabel("0");
-		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 15));
+		cantidadMonedas.setFont(new Font("Tahoma", Font.BOLD, 23));
 		panelMonedas.add(cantidadMonedas, BorderLayout.EAST);
 	}
-	
+
 	public void crearMenu(boolean estado) {
 		this.panelPrincipal.removeAll();
-		
-		if(estado) {
+
+		if (estado) {
 			crearMenuVictoria();
 		} else {
 			crearMenuDerrota();
 		}
-		
+
 		reiniciar = new JButton("REINICIAR");
 		reiniciar.setBorder(new EmptyBorder(50, 5, 50, 5));
 		this.panelPrincipal.add(reiniciar, BorderLayout.SOUTH);
 	}
-	
+
 	private void crearMenuVictoria() {
 		this.panelPrincipal.setBackground(Color.GREEN);
 
@@ -283,7 +324,7 @@ public class UI extends JFrame {
 		mensajePartida.setHorizontalAlignment(SwingConstants.CENTER);
 		this.panelPrincipal.add(mensajePartida, BorderLayout.CENTER);
 	}
-	
+
 	private void crearMenuDerrota() {
 		this.panelPrincipal.setBackground(Color.RED);
 
@@ -294,14 +335,22 @@ public class UI extends JFrame {
 		this.panelPrincipal.add(mensajePartida, BorderLayout.CENTER);
 	}
 
+	@Override
+	public Image getIconImage() {
+		String imagen = "/assets/icon" + Utiles.generarNumeroAleatorio(0, 5) + ".png";
+		Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource(imagen));
+
+		return retValue;
+	}
+
 	public JPanel getContentPane() {
 		return contentPane;
 	}
-	
+
 	public JPanel getPanelTituloJuego() {
 		return panelTituloJuego;
 	}
-	
+
 	public SeleccionColores getPanelColores() {
 		return panelColores;
 	}
@@ -321,7 +370,7 @@ public class UI extends JFrame {
 	public Pila getPilaDos() {
 		return pilaDos;
 	}
-	
+
 	public Lista getLista() {
 		return lista;
 	}
