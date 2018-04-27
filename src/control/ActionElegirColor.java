@@ -1,13 +1,12 @@
 package control;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class ActionElegirColor implements ActionListener {
 	
-	ParaUI paraUI;
+	private ParaUI paraUI;
 
 	public ActionElegirColor(ParaUI paraUI) {
 		super();

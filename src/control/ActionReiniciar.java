@@ -14,9 +14,7 @@ public class ActionReiniciar implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.paraUI.getControl().reiniciar();
-		this.paraUI.getAccionesParaUI().reiniciarJuego();
-		this.paraUI.establecerListeners();
+		this.paraUI.reiniciar();
 	}
 
 }

@@ -1,5 +1,9 @@
 package utiles;
 
+import java.awt.Color;
+
+import font.CustomFont;
+
 public final class Constantes {
 
 	public final static int TAMANO_COLA = 10;
@@ -12,5 +16,7 @@ public final class Constantes {
 	public final static int TAMANO_HISTORICO = 5;
 	public final static int CANTIDAD_COLORES_SELECCION = 3;
 	public final static int CANTIDAD_PILAS = 2;
+	public final static Color BACKGROUND_PANELES = new Color(255, 255, 255, 130);
+	public final static CustomFont FUENTE_CABECERA = new CustomFont("Patchwork Stitchlings Color.ttf");
 
 }

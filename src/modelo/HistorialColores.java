@@ -9,11 +9,15 @@ public class HistorialColores {
 	private ArrayList<Color> historial;
 
 	private void sustituir(Color color) {
+		assert color != null : "El color es nulo";
+		
 		historial.remove(0);
 		historial.add(color);
 	}
 
 	private void agregar(Color color) {
+		assert color != null : "El color es nulo";
+		
 		historial.add(color);
 	}
 	
@@ -26,6 +30,8 @@ public class HistorialColores {
 	}
 
 	public boolean isRepetido(Color color) {
+		assert color != null : "El color es nulo";
+		
 		int coincidencias = 0;
 		for (Color colores : this.historial) {
 			if (colores == color) {
@@ -36,6 +42,8 @@ public class HistorialColores {
 	}
 
 	public void actualizar(Color color) {
+		assert color != null : "El color es nulo";
+		
 		if (isCompleto()) {
 			sustituir(color);
 		} else {

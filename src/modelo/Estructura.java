@@ -12,7 +12,7 @@ public class Estructura {
 	private Cola cola;
 	private ArrayList<Pila> pilas;
 	private Lista lista;
-	private Tesoro tesoro;
+	private Monedero tesoro;
 	private HistorialColores historialColores;
 	private PaletaDeColores paletaDeColores;
 
@@ -20,7 +20,7 @@ public class Estructura {
 		this.cola = new Cola();
 		this.pilas = new ArrayList<>();
 		this.lista = new Lista();
-		this.tesoro = new Tesoro();
+		this.tesoro = new Monedero();
 		this.historialColores = new HistorialColores();
 		this.paletaDeColores = new PaletaDeColores(historialColores);
 		inicializar();
@@ -53,6 +53,8 @@ public class Estructura {
 	}
 
 	public boolean realizarJugada(Color color) {
+		assert (color != null) : "El color es nulo";
+		
 		this.cola.encolar(color);
 		this.historialColores.actualizar(color);
 		int pilaSeleccionada = getIndicePilaAleatoria();
@@ -99,6 +101,9 @@ public class Estructura {
 	 * @return Retorna TRUE en caso de que este llena o FALSE en caso contrario.
 	 */
 	public boolean isColeccionLlena(AbstractCollection<Color> coleccion, int limite) {
+		assert (coleccion != null) : "La coleccion es nula";
+		assert (limite > 0) : "El limite es igual o inferior a 0";
+
 		return coleccion.size() > limite;
 
 	}
@@ -111,6 +116,8 @@ public class Estructura {
 	 *         contrario.
 	 */
 	public boolean isColoresIgualesContiguos(AbstractCollection<Color> coleccion) {
+		assert (coleccion != null) : "La coleccion es nula";
+		
 		for (int i = 0; i < coleccion.size() - 1; i++) {
 			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
 				return true;
@@ -127,6 +134,8 @@ public class Estructura {
 	 * @return Retorna la posicion del color repetido
 	 */
 	public int getColorIgualContiguo(AbstractCollection<Color> coleccion) {
+		assert (coleccion != null) : "La coleccion es nula";
+		
 		int indice = 0;
 		for (int i = 0; i < coleccion.size() - 1; i++) {
 			if (comprobarColoresIguales(getColor(coleccion, i), getColor(coleccion, i + 1))) {
@@ -138,10 +147,15 @@ public class Estructura {
 	}
 
 	private boolean comprobarColoresIguales(Color color1, Color color2) {
+		assert (color1 != null && color2 != null) : "Alguno de los colores es nulo";
+
 		return color1 == color2;
 	}
 
 	private Color getColor(AbstractCollection<Color> coleccion, int posicion) {
+		assert (coleccion != null) : "La coleccione es nula";
+		assert posicion >= 0 : "La posicion es inferior a 0";
+		
 		if (coleccion instanceof Stack) {
 			return ((Stack<Color>) coleccion).get(posicion);
 		}
@@ -168,7 +182,7 @@ public class Estructura {
 		return paletaDeColores;
 	}
 
-	public boolean isLleno() {
+	public boolean isTesoroLleno() {
 		return tesoro.isLleno();
 	}
 

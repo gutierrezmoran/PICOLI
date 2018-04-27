@@ -2,7 +2,7 @@ package modelo;
 
 import utiles.Constantes;
 
-public class Tesoro {
+public class Monedero {
 
 	private int monedas;
 
