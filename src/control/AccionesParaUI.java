@@ -1,5 +1,6 @@
 package control;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class AccionesParaUI {
@@ -13,8 +14,10 @@ public class AccionesParaUI {
 	}
 
 	public void realizarJugada(Color color) {
-		if (this.paraUI.getControl().realizarJugada(color)) {
-			this.paraUI.crearMenu(this.paraUI.getControl().isLleno());
+		assert color != null : "El color es nulo";
+		
+		if (this.paraUI.getEstructura().realizarJugada(color)) {
+			this.paraUI.crearMenu(this.paraUI.getEstructura().isTesoroLleno());
 			this.paraUI.establecerListenerReiniciar();
 		} else {
 			actualizarUI();
@@ -27,61 +30,58 @@ public class AccionesParaUI {
 		actualizarPilas();
 		actualizarLista();
 		actualizarMonedas();
-		this.paraUI.getControl().getPaletaDeColores().renovar();
+		this.paraUI.getEstructura().getPaletaDeColores().renovar();
 		actualizarPaletaDeColores();
+		this.paraUI.getContentPane().updateUI();
 	}
 
 	private void actualizarMonedas() {
-		this.paraUI.getCantidadMonedas().setText(String.valueOf(this.paraUI.getControl().getMonedas()));
+		this.paraUI.getMonedero().getMonedas().setText(String.valueOf(this.paraUI.getEstructura().getMonedas()));
 	}
 
 	private void actualizarPilas() {
-		actualizarPilaUno();
-		actualizarPilaDos();
+		actualizarPila1();
+		actualizarPila2();
 	}
 
 	private void actualizarPaletaDeColores() {
-		this.paraUI.getPanelColores().removeAll();
-		for (Color color : this.paraUI.getControl().getPaletaDeColores().getPaletaDeColores()) {
-			this.paraUI.getPanelColores().agregar(color);
+		this.paraUI.getPaletaDeColores().getPaleta().removeAll();
+		for (Color color : this.paraUI.getEstructura().getPaletaDeColores().getPaletaDeColores()) {
+			this.paraUI.getPaletaDeColores().agregar(color);
 		}
 	}
 
-	private void actualizarPilaDos() {
-		this.paraUI.getPilaDos().removeAll();
-		int i = 0;
-		for (Color color : this.paraUI.getControl().getPilas().get(1).getPila()) {
-			this.paraUI.getPilaDos().agregarColor(color, i);
-			i++;
+	private void actualizarPila2() {
+		this.paraUI.getPila2().getPila().removeAll();
+		for (Color color : this.paraUI.getEstructura().getPilas().get(1).getPila()) {
+			this.paraUI.getPila2().agregar(color);
 		}
 	}
 
-	private void actualizarPilaUno() {
-		this.paraUI.getPilaUno().removeAll();
-		int i = 0;
-		for (Color color : this.paraUI.getControl().getPilas().get(0).getPila()) {
-			this.paraUI.getPilaUno().agregarColor(color, i);
-			i++;
+	private void actualizarPila1() {
+		this.paraUI.getPila1().getPila().removeAll();
+		for (Color color : this.paraUI.getEstructura().getPilas().get(0).getPila()) {
+			this.paraUI.getPila1().agregar(color);
 		}
 	}
 
 	private void actualizarCola() {
-		this.paraUI.getCola().removeAll();
-		for (Color color : this.paraUI.getControl().getCola().getCola()) {
-			this.paraUI.getCola().agregarColor(color);
+		this.paraUI.getCola().getCola().removeAll();
+		for (Color color : this.paraUI.getEstructura().getCola().getCola()) {
+			this.paraUI.getCola().agregar(color);
 		}
 	}
 
 	private void actualizarLista() {
-		this.paraUI.getLista().removeAll();
-		int i = 0;
-		for (Color color : this.paraUI.getControl().getLista().getLista()) {
-			this.paraUI.getLista().agregarColor(color, i);
-			i++;
+		this.paraUI.getLista().getLista().removeAll();
+		for (Color color : this.paraUI.getEstructura().getLista().getLista()) {
+			this.paraUI.getLista().agregar(color);
 		}
 	}
 
 	public void reiniciarJuego() {
+		this.paraUI.crearCabezera();
+
 		this.paraUI.getContentPane().remove(this.paraUI.getPanelPrincipal());
 		this.paraUI.crearPanelPrincipal();
 		actualizarUI();

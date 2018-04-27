@@ -16,6 +16,8 @@ public class PaletaDeColores {
 	}
 
 	private boolean isValido(Color color) {
+		assert color != null : "El color es nulo";
+		
 		return !this.historialColores.isRepetido(color) && !isRepetido(color);
 	}
 
@@ -43,6 +45,8 @@ public class PaletaDeColores {
 	}
 
 	public boolean isRepetido(Color color) {
+		assert color != null : "El color es nulo";
+		
 		for (Color colores : this.paletaDeColores) {
 			if (colores == color) {
 				return true;
@@ -53,6 +57,8 @@ public class PaletaDeColores {
 	}
 
 	public void agregar(Color color) {
+		assert color != null : "El color es nulo";
+		
 		this.paletaDeColores.add(color);
 	}
 

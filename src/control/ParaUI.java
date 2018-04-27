@@ -7,7 +7,7 @@ import vista.UI;
 
 public class ParaUI extends UI {
 
-	private Estructura control = new Estructura();
+	private Estructura estructura = new Estructura();
 	private AccionesParaUI accionesParaUI = new AccionesParaUI(this);
 
 	public ParaUI() {
@@ -15,21 +15,27 @@ public class ParaUI extends UI {
 	}
 
 	public void establecerListeners() {
-		establecerListenersColores();
+		establecerListenerColores();
 	}
 
-	public void establecerListenersColores() {
-		for (Component componente : getPanelColores().getComponents()) {
+	public void establecerListenerColores() {
+		for (Component componente : getPaletaDeColores().getPaleta().getComponents()) {
 			((JButton) componente).addActionListener(new ActionElegirColor(this));
 		}
 	}
 
 	public void establecerListenerReiniciar() {
-		reiniciar.addActionListener(new ActionReiniciar(this));
+		menu.getReiniciar().addActionListener(new ActionReiniciar(this));
+	}
+	
+	public void reiniciar() {
+		this.estructura.reiniciar();
+		this.accionesParaUI.reiniciarJuego();
+		establecerListeners();
 	}
 
-	public Estructura getControl() {
-		return control;
+	public Estructura getEstructura() {
+		return estructura;
 	}
 
 	public AccionesParaUI getAccionesParaUI() {

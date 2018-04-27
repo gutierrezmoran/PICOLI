@@ -16,6 +16,8 @@ public class Pila extends Stack<Color> {
 	}
 
 	public void apilar(Color color) {
+		assert color != null : "El color es nulo";
+		
 		pila.push(color);
 	}
 

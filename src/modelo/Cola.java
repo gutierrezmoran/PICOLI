@@ -19,6 +19,8 @@ public class Cola extends ArrayDeque<Color> {
 	}
 
 	public void encolar(Color color) {
+		assert color != null : "El color es nulo";
+		
 		cola.add(color);
 	}
 
