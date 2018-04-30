@@ -64,21 +64,4 @@ class EstructuraTest {
 
 	}
 
-	@Test
-	void testIsColoresIgualesContiguos() {
-		ArrayList<Color> coloresContiguos = new ArrayList<>();
-		ArrayList<Color> coloresNoContiguos = new ArrayList<>();
-
-		for (int i = 0; i < 2; i++) {
-			coloresContiguos.add(Color.YELLOW);
-			coloresContiguos.add(Color.BLUE);
-			coloresContiguos.add(Color.YELLOW);
-			coloresNoContiguos.add(Color.ORANGE);
-			coloresNoContiguos.add(Color.RED);
-		}
-
-		assertTrue(this.estructura.isColoresIgualesContiguos(coloresContiguos));
-		assertFalse(this.estructura.isColoresIgualesContiguos(coloresNoContiguos));
-	}
-
 }

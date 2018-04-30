@@ -1,4 +1,4 @@
-package font;
+package utiles.font;
 
 import java.awt.Font;
 import java.io.InputStream;

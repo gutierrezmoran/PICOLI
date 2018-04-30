@@ -2,7 +2,7 @@ package utiles;
 
 import java.awt.Color;
 
-import font.CustomFont;
+import utiles.font.CustomFont;
 
 public final class Constantes {
 

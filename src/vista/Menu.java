@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import modelo.Colores;
 import utiles.Constantes;
@@ -43,7 +44,7 @@ public class Menu extends JPanel {
 	private void crearPanelCentral() {
 		this.panelCentral = new JPanel();
 		this.panelCentral.setOpaque(false);
-		this.panelCentral.setPreferredSize(new Dimension(700, 260));
+		this.panelCentral.setPreferredSize(new Dimension(800, 260));
 		this.panelCentral.setLayout(new BorderLayout(0, 0));
 		add(this.panelCentral);
 
@@ -52,7 +53,7 @@ public class Menu extends JPanel {
 	}
 
 	private void crearVictoria() {
-		JLabel mensajePartida = new JLabel("PICOLI WIN");
+		JLabel mensajePartida = new JLabel("PICOLI GANA");
 		mensajePartida.setFont(Constantes.FUENTE_CABECERA.MyFont(1, 45));
 		mensajePartida.setForeground(new Color(11, 186, 125));
 		mensajePartida.setHorizontalAlignment(SwingConstants.CENTER);
@@ -60,7 +61,7 @@ public class Menu extends JPanel {
 	}
 
 	private void crearDerrota() {
-		JLabel mensajePartida = new JLabel("PICOLI OVER");
+		JLabel mensajePartida = new JLabel("PICOLI PIERDE");
 		mensajePartida.setFont(Constantes.FUENTE_CABECERA.MyFont(1, 45));
 		mensajePartida.setForeground(new Color(209, 14, 14));
 		mensajePartida.setHorizontalAlignment(SwingConstants.CENTER);
@@ -69,7 +70,7 @@ public class Menu extends JPanel {
 
 	private void crearBotonReiniciar() {
 		this.reiniciar = new JButton("Reiniciar");
-		this.reiniciar.setBorder(null);
+		this.reiniciar.setBorder(new LineBorder(new Color(106, 146, 242), 1));
 		this.reiniciar.setBackground(new Color(39, 201, 255));
 		this.reiniciar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		this.reiniciar.setForeground(new Color(255, 226, 70));

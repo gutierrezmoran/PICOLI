@@ -9,6 +9,10 @@ public class Monedero {
 	public void incrementar() {
 		this.monedas += 2;
 	}
+	
+	public void incrementar(int cantidad) {
+		this.monedas += cantidad;
+	}
 
 	public void reiniciar() {
 		this.monedas = 0;

@@ -1,25 +1,15 @@
 package vista;
 
 import java.awt.BorderLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import control.JPanelBackgroundImage;
-import font.CustomFont;
-import utiles.Constantes;
-import utiles.Utiles;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Cursor;
-import javax.swing.border.LineBorder;
-import java.awt.SystemColor;
 import java.awt.Toolkit;
 
 public class UI extends JFrame {
@@ -86,6 +76,7 @@ public class UI extends JFrame {
 		panelPilas.setLayout(new BorderLayout(5, 0));
 		
 		JLabel lblPilas = new JLabel("PILAS");
+		lblPilas.setForeground(Color.BLACK);
 		lblPilas.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblPilas.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPilas.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));

@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="control.ParaUI" project="PICOLI" file="/PICOLI/src/control/ParaUI.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="194" width="206" x="1456" y="1017"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="modelo.Cola" project="PICOLI" file="/PICOLI/src/modelo/Cola.java" binary="false" 
+  <class id="1" language="java" name="modelo.Cola" project="PICOLI" file="/PICOLI/src/modelo/Cola.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="196" width="186" x="525" y="881"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -19,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="modelo.Lista" project="PICOLI" file="/PICOLI/src/modelo/Lista.java" binary="false" 
+  <class id="2" language="java" name="modelo.Lista" project="PICOLI" file="/PICOLI/src/modelo/Lista.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="180" width="186" x="526" y="1296"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -28,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="modelo.Pila" project="PICOLI" file="/PICOLI/src/modelo/Pila.java" binary="false" 
+  <class id="3" language="java" name="modelo.Pila" project="PICOLI" file="/PICOLI/src/modelo/Pila.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="184" width="185" x="526" y="1095"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,16 +28,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="vista.UI" project="PICOLI" file="/PICOLI/src/vista/UI.java" binary="false" 
+  <class id="4" language="java" name="vista.UI" project="PICOLI" file="/PICOLI/src/vista/UI.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="589" width="214" x="1905" y="819"/>    
+    <position height="589" width="214" x="3509" y="823"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="modelo.Estructura" project="PICOLI" file="/PICOLI/src/modelo/Estructura.java" 
+  <class id="5" language="java" name="modelo.Estructura" project="PICOLI" file="/PICOLI/src/modelo/Estructura.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1000" y="1116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,34 +46,34 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="vista.Cola" project="PICOLI" file="/PICOLI/src/vista/Cola.java" binary="false" 
+  <class id="6" language="java" name="vista.Cola" project="PICOLI" file="/PICOLI/src/vista/Cola.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="108" width="212" x="1905" y="671"/>    
+    <position height="108" width="212" x="3509" y="675"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="vista.Lista" project="PICOLI" file="/PICOLI/src/vista/Lista.java" binary="false" 
+  <class id="7" language="java" name="vista.Lista" project="PICOLI" file="/PICOLI/src/vista/Lista.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="104" width="160" x="2573" y="856"/>    
+    <position height="104" width="160" x="4177" y="860"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="vista.Pila" project="PICOLI" file="/PICOLI/src/vista/Pila.java" binary="false" 
+  <class id="8" language="java" name="vista.Pila" project="PICOLI" file="/PICOLI/src/vista/Pila.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="101" width="222" x="1904" y="1454"/>    
+    <position height="101" width="222" x="3508" y="1458"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="modelo.HistorialColores" project="PICOLI" 
+  <class id="9" language="java" name="modelo.HistorialColores" project="PICOLI" 
     file="/PICOLI/src/modelo/HistorialColores.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="228" width="221" x="547" y="580"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="11" language="java" name="modelo.Colores" project="PICOLI" file="/PICOLI/src/modelo/Colores.java" 
+  <enumeration id="10" language="java" name="modelo.Colores" project="PICOLI" file="/PICOLI/src/modelo/Colores.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="302" width="154" x="224" y="879"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="12" language="java" name="modelo.PaletaDeColores" project="PICOLI" 
+  <class id="11" language="java" name="modelo.PaletaDeColores" project="PICOLI" 
     file="/PICOLI/src/modelo/PaletaDeColores.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="228" width="213" x="894" y="579"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="utiles.Utiles" project="PICOLI" file="/PICOLI/src/utiles/Utiles.java" 
+  <class id="12" language="java" name="utiles.Utiles" project="PICOLI" file="/PICOLI/src/utiles/Utiles.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="122" width="156" x="225" y="1212"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,44 +109,44 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="control.AccionesParaUI" project="PICOLI" 
-    file="/PICOLI/src/control/AccionesParaUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="275" width="183" x="1498" y="329"/>    
+  <class id="13" language="java" name="control.acciones.AccionesParaUI" project="PICOLI" 
+    file="/PICOLI/src/control/acciones/AccionesParaUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="275" width="183" x="2548" y="341"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="control.ActionElegirColor" project="PICOLI" 
-    file="/PICOLI/src/control/ActionElegirColor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1253" y="418"/>    
+  <class id="14" language="java" name="control.eventos.ActionElegirColor" project="PICOLI" 
+    file="/PICOLI/src/control/eventos/ActionElegirColor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2269" y="452"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="control.ActionReiniciar" project="PICOLI" 
-    file="/PICOLI/src/control/ActionReiniciar.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1918" y="437"/>    
+  <class id="15" language="java" name="control.eventos.ActionReiniciar" project="PICOLI" 
+    file="/PICOLI/src/control/eventos/ActionReiniciar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3002" y="491"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="control.JPanelBackgroundImage" project="PICOLI" 
+  <class id="16" language="java" name="control.JPanelBackgroundImage" project="PICOLI" 
     file="/PICOLI/src/control/JPanelBackgroundImage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2435" y="515"/>    
+    <position height="-1" width="-1" x="4039" y="519"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="font.CustomFont" project="PICOLI" file="/PICOLI/src/font/CustomFont.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="utiles.font.CustomFont" project="PICOLI" 
+    file="/PICOLI/src/utiles/font/CustomFont.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="117" width="153" x="224" y="744"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -163,251 +154,456 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="modelo.Monedero" project="PICOLI" file="/PICOLI/src/modelo/Monedero.java" 
+  <class id="18" language="java" name="modelo.Monedero" project="PICOLI" file="/PICOLI/src/modelo/Monedero.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="977" y="1500"/>    
+    <position height="-1" width="-1" x="1027" y="1600"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="vista.Botones" project="PICOLI" file="/PICOLI/src/vista/Botones.java" 
+  <class id="19" language="java" name="vista.Botones" project="PICOLI" file="/PICOLI/src/vista/Botones.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="168" x="2561" y="1076"/>    
+    <position height="135" width="168" x="4165" y="1080"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="vista.Cabecera" project="PICOLI" file="/PICOLI/src/vista/Cabecera.java" 
+  <class id="20" language="java" name="vista.Cabecera" project="PICOLI" file="/PICOLI/src/vista/Cabecera.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="107" width="159" x="2744" y="562"/>    
+    <position height="107" width="159" x="4348" y="566"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="vista.Comodines" project="PICOLI" file="/PICOLI/src/vista/Comodines.java" 
+  <class id="21" language="java" name="vista.Comodines" project="PICOLI" file="/PICOLI/src/vista/Comodines.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="215" width="182" x="2971" y="915"/>    
+    <position height="215" width="182" x="4575" y="919"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="vista.Menu" project="PICOLI" file="/PICOLI/src/vista/Menu.java" binary="false" 
+  <class id="22" language="java" name="vista.Menu" project="PICOLI" file="/PICOLI/src/vista/Menu.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2488" y="1838"/>    
+    <position height="-1" width="-1" x="4092" y="1842"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="vista.Monedero" project="PICOLI" file="/PICOLI/src/vista/Monedero.java" 
+  <class id="23" language="java" name="vista.Monedero" project="PICOLI" file="/PICOLI/src/vista/Monedero.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="177" x="2435" y="1363"/>    
+    <position height="135" width="177" x="4039" y="1367"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="vista.PaletaDeColores" project="PICOLI" 
+  <class id="24" language="java" name="vista.PaletaDeColores" project="PICOLI" 
     file="/PICOLI/src/vista/PaletaDeColores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="169" width="192" x="2970" y="1186"/>    
+    <position height="169" width="192" x="4574" y="1190"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="26">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="27" name="botones"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <class id="25" language="java" name="control.ParaUI" project="PICOLI" file="/PICOLI/src/control/ParaUI.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2422" y="1114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="control.acciones.AccionesActivarTodosColores" project="PICOLI" 
+    file="/PICOLI/src/control/acciones/AccionesActivarTodosColores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1998" y="1610"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="control.acciones.AccionesBorrarColor" project="PICOLI" 
+    file="/PICOLI/src/control/acciones/AccionesBorrarColor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2376" y="1660"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="control.acciones.AccionesSeleccionarColor" project="PICOLI" 
+    file="/PICOLI/src/control/acciones/AccionesSeleccionarColor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2738" y="1566"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="control.eventos.ActionActivarBorrarColor" project="PICOLI" 
+    file="/PICOLI/src/control/eventos/ActionActivarBorrarColor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1976" y="400"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="control.eventos.ActionActivarTodosColores" project="PICOLI" 
+    file="/PICOLI/src/control/eventos/ActionActivarTodosColores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1820" y="610"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="control.eventos.ActionBorrarColor" project="PICOLI" 
+    file="/PICOLI/src/control/eventos/ActionBorrarColor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3064" y="860"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="modelo.BorradorColores" project="PICOLI" 
+    file="/PICOLI/src/modelo/BorradorColores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="784" y="1686"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="modelo.SeleccionadorTodosColores" project="PICOLI" 
+    file="/PICOLI/src/modelo/SeleccionadorTodosColores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1292" y="778"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="34">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="35" name="accionesParaUI"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="30">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="31" name="lista">        
-        <position height="0" width="0" x="-226" y="-325"/>      
-      </attribute>      
-      <multiplicity id="32" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-226" y="-325"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="34" name="estructura">        
+  <association id="37">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="38" name="monedero">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="35" minimum="0" maximum="1">        
+      <multiplicity id="39" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="37" name="pilas">        
-        <position height="0" width="0" x="1" y="45"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="1" y="45"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="40" name="paletaDeColores">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="43" name="paraUI"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="46" name="paraUI"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="49" name="paleta"/>      
-      <multiplicity id="50" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="52" name="menu"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="55" name="tesoro"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
+  <association id="40">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="41" name="borradorColores"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
+    <end type="TARGET" refId="32" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="58" name="lista">        
-        <position height="0" width="0" x="1" y="78"/>      
+  <association id="43">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="44" name="monedero">        
+        <position height="0" width="0" x="50" y="100"/>      
       </attribute>      
-      <multiplicity id="59" minimum="0" maximum="1">        
-        <position height="0" width="0" x="1" y="78"/>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="50" y="100"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="60">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="61" name="paraUI"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
+  <association id="46">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="47" name="cola">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="63">    
+  <association id="49">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="50" name="accionesActivarTodosColores"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="53" name="paraUI"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="64" name="cabecera"/>      
-      <multiplicity id="65" minimum="0" maximum="1"/>    
+      <attribute id="56" name="seleccionadorTodosColores"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
+    <end type="TARGET" refId="33" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="66">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="67" name="comodines"/>      
-      <multiplicity id="68" minimum="0" maximum="1"/>    
+  <association id="58">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="59" name="paraUI"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="69">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="70" name="cola">        
+  <association id="61">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="62" name="paraUI"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="65" name="estructura"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="68" name="paleta">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="71" minimum="0" maximum="1">        
+      <multiplicity id="69" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="71" name="lista">        
+        <position height="0" width="0" x="1" y="78"/>      
+      </attribute>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="1" y="78"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="72">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="73" name="contentPane"/>      
-      <multiplicity id="74" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="75">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="76" name="monedero"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="78">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="79" name="accionesParaUI"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="81">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="82" name="historialColores">        
+  <association id="73">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="74" name="cabecera">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="83" minimum="0" maximum="1">        
+      <multiplicity id="75" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="77" name="accionesSeleccionarColor"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="80" name="contentPane">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="81" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="83" name="paraUI"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="86" name="historialColores">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="87" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="89" name="estructura"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="92" name="paraUI"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="95" name="paraUI"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="98" name="pilas">        
+        <position height="0" width="0" x="1" y="45"/>      
+      </attribute>      
+      <multiplicity id="99" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="1" y="45"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="101" name="paraUI"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="104" name="paraUI"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="107" name="comodines">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="108" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="110" name="menu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="111" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="112">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="113">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="114" name="paraUI"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="117" name="accionesBorrarColor"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="120" name="paletaDeColores">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="121" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="123" name="lista">        
+        <position height="0" width="0" x="-226" y="-325"/>      
+      </attribute>      
+      <multiplicity id="124" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-226" y="-325"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="125">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="126" name="botones">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="127" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
