@@ -1,8 +1,8 @@
-package control.acciones;
+package controlador.acciones;
 
 import java.awt.Color;
 
-import control.ParaUI;
+import controlador.ParaUI;
 
 public class AccionesSeleccionarColor {
 
@@ -14,6 +14,8 @@ public class AccionesSeleccionarColor {
 	
 	public void seleccionarColor(Color color) {
 		assert color != null : "El color es nulo";
+		
+		this.paraUI.desactivarSeleccionadorTodosColores();
 		
 		if (this.paraUI.getEstructura().realizarJugada(color)) {
 			this.paraUI.crearMenu(this.paraUI.getEstructura().isTesoroLleno());

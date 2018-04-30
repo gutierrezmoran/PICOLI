@@ -1,4 +1,4 @@
-package control;
+package controlador;
 
 import java.awt.Dimension;
 import java.awt.Graphics;

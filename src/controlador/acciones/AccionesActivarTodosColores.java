@@ -1,6 +1,6 @@
-package control.acciones;
+package controlador.acciones;
 
-import control.ParaUI;
+import controlador.ParaUI;
 import modelo.Colores;
 import utiles.Constantes;
 
@@ -13,6 +13,7 @@ public class AccionesActivarTodosColores {
 	}
 	
 	public void generarTodosColores() {
+		this.paraUI.getEstructura().getSeleccionadorTodosColores().activar();
 		this.paraUI.getEstructura().getPaletaDeColores().limpiar();
 		
 		for (int i = 0; i < Constantes.PETICION_COLOR_MAX; i++) {

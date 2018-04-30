@@ -1,12 +1,13 @@
 package vista;
 
 import java.awt.BorderLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import control.JPanelBackgroundImage;
+import controlador.JPanelBackgroundImage;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -164,6 +165,10 @@ public class UI extends JFrame {
 
 	public JPanel getMenu() {
 		return this.menu;
+	}
+
+	public JButton getBarajarPila() {
+		return botones.getBarajarPila();
 	}
 
 }

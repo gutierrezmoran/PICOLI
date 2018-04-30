@@ -1,8 +1,8 @@
-package modelo;
+package modelo.comodines;
 
 import java.awt.Color;
 import java.util.Iterator;
-
+import modelo.Estructura;
 import utiles.Constantes;
 
 public class BorradorColores {

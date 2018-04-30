@@ -9,8 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import javafx.scene.layout.Border;
 import utiles.Constantes;
 
 public class Pila extends JPanel {

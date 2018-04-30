@@ -1,9 +1,9 @@
-package control.eventos;
+package controlador.eventos.comodines;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import control.ParaUI;
+import controlador.ParaUI;
 
 public class ActionActivarBorrarColor implements ActionListener {
 	
