@@ -38,6 +38,16 @@ public class PaletaDeColores {
 	public void limpiar() {
 		this.paletaDeColores.clear();
 	}
+	
+	public boolean buscar(Color color) {
+		for (Color colorPaleta : this.paletaDeColores) {
+			if(colorPaleta == color) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	public void renovar() {
 		limpiar();

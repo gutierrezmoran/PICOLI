@@ -6,8 +6,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import font.CustomFont;
+
 import utiles.Constantes;
+import utiles.font.CustomFont;
 
 public class Cabecera extends JPanel {
 	

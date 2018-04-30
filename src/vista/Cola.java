@@ -25,7 +25,7 @@ public class Cola extends JPanel {
 		
 		JLabel label = new JLabel();
 		label.setBackground(color);
-		label.setBorder(new LineBorder(new Color(109, 109, 109)));
+		label.setBorder(new LineBorder(Color.BLACK));
 		label.setFont(new Font("Arial", Font.BOLD, 10));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setOpaque(true);
@@ -53,6 +53,7 @@ public class Cola extends JPanel {
 		this.add(panelCabeceraCola, BorderLayout.NORTH);
 
 		JLabel lblNewLabel_1 = new JLabel("COLA");
+		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));

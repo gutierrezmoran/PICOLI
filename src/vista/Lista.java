@@ -43,6 +43,7 @@ public class Lista extends JPanel {
 		this.add(this.lista);
 
 		JLabel lblLista = new JLabel("LISTA");
+		lblLista.setForeground(Color.BLACK);
 		lblLista.setBorder(new EmptyBorder(0, 0, 5, 0));
 		lblLista.setHorizontalAlignment(SwingConstants.LEFT);
 		lblLista.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));

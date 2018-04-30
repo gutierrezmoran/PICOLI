@@ -1,7 +1,9 @@
-package control;
+package control.acciones;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+
+import control.ParaUI;
 
 public class AccionesParaUI {
 
@@ -13,23 +15,13 @@ public class AccionesParaUI {
 		actualizarUI();
 	}
 
-	public void realizarJugada(Color color) {
-		assert color != null : "El color es nulo";
-		
-		if (this.paraUI.getEstructura().realizarJugada(color)) {
-			this.paraUI.crearMenu(this.paraUI.getEstructura().isTesoroLleno());
-			this.paraUI.establecerListenerReiniciar();
-		} else {
-			actualizarUI();
-			this.paraUI.establecerListeners();
-		}
-	}
-
 	public void actualizarUI() {
 		actualizarCola();
 		actualizarPilas();
 		actualizarLista();
 		actualizarMonedas();
+		actualizarBorrarColor();
+		actualizarTodosColores();
 		this.paraUI.getEstructura().getPaletaDeColores().renovar();
 		actualizarPaletaDeColores();
 		this.paraUI.getContentPane().updateUI();
@@ -43,12 +35,24 @@ public class AccionesParaUI {
 		actualizarPila1();
 		actualizarPila2();
 	}
+	
+	private void actualizarBorrarColor() {
+		this.paraUI.getBotones().getComodines().getLabelBorrarColor().setText(String.valueOf(this.paraUI.getEstructura().getBorradorColores().getDisponibilidad()));
+	}
+	
+	private void actualizarTodosColores() {
+		this.paraUI.getBotones().getComodines().getLabelPedirColor().setText(String.valueOf(this.paraUI.getEstructura().getSeleccionadorTodosColores().getDisponibilidad()));
+	}
 
-	private void actualizarPaletaDeColores() {
+	public void actualizarPaletaDeColores() {
 		this.paraUI.getPaletaDeColores().getPaleta().removeAll();
 		for (Color color : this.paraUI.getEstructura().getPaletaDeColores().getPaletaDeColores()) {
 			this.paraUI.getPaletaDeColores().agregar(color);
 		}
+	}
+	
+	public void actualizarRotuloPaleta() {
+		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONAR UN COLOR");
 	}
 
 	private void actualizarPila2() {
