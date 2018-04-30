@@ -1,9 +1,7 @@
-package control.acciones;
+package controlador.acciones;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-
-import control.ParaUI;
+import controlador.ParaUI;
 
 public class AccionesParaUI {
 
@@ -22,6 +20,7 @@ public class AccionesParaUI {
 		actualizarMonedas();
 		actualizarBorrarColor();
 		actualizarTodosColores();
+		actualizarBarajarPilas();
 		this.paraUI.getEstructura().getPaletaDeColores().renovar();
 		actualizarPaletaDeColores();
 		this.paraUI.getContentPane().updateUI();
@@ -31,7 +30,7 @@ public class AccionesParaUI {
 		this.paraUI.getMonedero().getMonedas().setText(String.valueOf(this.paraUI.getEstructura().getMonedas()));
 	}
 
-	private void actualizarPilas() {
+	public void actualizarPilas() {
 		actualizarPila1();
 		actualizarPila2();
 	}
@@ -42,6 +41,10 @@ public class AccionesParaUI {
 	
 	private void actualizarTodosColores() {
 		this.paraUI.getBotones().getComodines().getLabelPedirColor().setText(String.valueOf(this.paraUI.getEstructura().getSeleccionadorTodosColores().getDisponibilidad()));
+	}
+	
+	public void actualizarBarajarPilas() {
+		this.paraUI.getBotones().getComodines().getLabelBarajarPila().setText(String.valueOf(this.paraUI.getEstructura().getBarajadorPilas().getDisponibilidad()));
 	}
 
 	public void actualizarPaletaDeColores() {

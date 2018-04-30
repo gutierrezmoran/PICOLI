@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -39,7 +38,7 @@ public class Lista extends JPanel {
 
 		this.lista = new JPanel();
 		this.lista.setBackground(Constantes.BACKGROUND_PANELES);
-		this.lista.setLayout(new GridLayout(Constantes.TAMANO_LISTA_LADO, 1, 0, 0));
+		this.lista.setLayout(new GridLayout(Constantes.TAMANO_LISTA_LADO, 1, 2, 0));
 		this.add(this.lista);
 
 		JLabel lblLista = new JLabel("LISTA");

@@ -1,11 +1,11 @@
-package control.acciones;
+package controlador.acciones;
 
 import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JLabel;
 
-import control.ParaUI;
+import controlador.ParaUI;
 
 public class AccionesBorrarColor {
 

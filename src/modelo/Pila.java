@@ -11,10 +11,6 @@ public class Pila extends Stack<Color> {
 		this.pila = new Stack<Color>();
 	}
 
-	public Stack<Color> getPila() {
-		return pila;
-	}
-
 	public void apilar(Color color) {
 		assert color != null : "El color es nulo";
 		
@@ -28,4 +24,17 @@ public class Pila extends Stack<Color> {
 	public void limpiar() {
 		this.pila.clear();
 	}
+	
+	public Stack<Color> getPila() {
+		return pila;
+	}
+
+	public void setPila(Stack<Color> pila) {
+		this.pila = pila;
+	}
+	
+	public boolean isVacia() {
+		return this.pila.empty();
+	}
+
 }

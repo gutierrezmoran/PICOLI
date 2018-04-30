@@ -1,29 +1,32 @@
-package control;
+package controlador;
 
 import java.awt.Component;
 import javax.swing.JButton;
-
-import control.acciones.AccionesActivarTodosColores;
-import control.acciones.AccionesBorrarColor;
-import control.acciones.AccionesParaUI;
-import control.acciones.AccionesSeleccionarColor;
-import control.eventos.ActionActivarBorrarColor;
-import control.eventos.ActionActivarTodosColores;
-import control.eventos.ActionBorrarColor;
-import control.eventos.ActionElegirColor;
-import control.eventos.ActionReiniciar;
+import controlador.acciones.*;
+import controlador.eventos.*;
+import controlador.eventos.comodines.ActionActivarBorrarColor;
+import controlador.eventos.comodines.ActionActivarTodosColores;
+import controlador.eventos.comodines.ActionBarajarPilas;
+import controlador.eventos.comodines.ActionBorrarColor;
 import modelo.Estructura;
 import vista.UI;
 
 public class ParaUI extends UI {
 
-	private Estructura estructura = new Estructura();
-	private AccionesParaUI accionesParaUI = new AccionesParaUI(this);
-	private AccionesBorrarColor accionesBorrarColor = new AccionesBorrarColor(this);
-	private AccionesSeleccionarColor accionesSeleccionarColor = new AccionesSeleccionarColor(this);
-	private AccionesActivarTodosColores accionesActivarTodosColores = new AccionesActivarTodosColores(this);
+	private Estructura estructura;
+	private AccionesParaUI accionesParaUI;
+	private AccionesBorrarColor accionesBorrarColor;
+	private AccionesSeleccionarColor accionesSeleccionarColor;
+	private AccionesActivarTodosColores accionesActivarTodosColores;
+	private AccionesBarajarPilas accionesBarajarPilas;
 
 	public ParaUI() {
+		this.estructura = new Estructura();
+		this.accionesParaUI = new AccionesParaUI(this);
+		this.accionesBorrarColor = new AccionesBorrarColor(this);
+		this.accionesSeleccionarColor = new AccionesSeleccionarColor(this);
+		this.accionesActivarTodosColores = new AccionesActivarTodosColores(this);
+		this.accionesBarajarPilas = new AccionesBarajarPilas(this);
 		establecerListeners();
 	}
 
@@ -31,6 +34,7 @@ public class ParaUI extends UI {
 		establecerListenerElegirColor();
 		establecerListenerActivarBorrarColor();
 		establecerListenerActivarTodosColores();
+		establecerListenerBarajarPilas();
 	}
 
 	public void establecerListenerElegirColor() {
@@ -51,6 +55,10 @@ public class ParaUI extends UI {
 		for (Component componente : getPaletaDeColores().getPaleta().getComponents()) {
 			((JButton) componente).addMouseListener(new ActionBorrarColor(this));
 		}
+	}
+	
+	public void establecerListenerBarajarPilas() {
+		getBarajarPila().addActionListener(new ActionBarajarPilas(this));
 	}
 
 	public void establecerListenerReiniciar() {
@@ -85,6 +93,22 @@ public class ParaUI extends UI {
 
 	public AccionesActivarTodosColores getAccionesActivarTodosColores() {
 		return accionesActivarTodosColores;
+	}
+
+	public AccionesBarajarPilas getAccionesBarajarPilas() {
+		return accionesBarajarPilas;
+	}
+
+	public boolean isDesactivadoSeleccionadorTodosColores() {
+		return estructura.isDesactivadoSeleccionadorTodosColores();
+	}
+
+	public void activarSeleccionadorTodosColores() {
+		estructura.activarSeleccionadorTodosColores();
+	}
+
+	public void desactivarSeleccionadorTodosColores() {
+		estructura.desactivarSeleccionadorTodosColores();
 	}
 
 }

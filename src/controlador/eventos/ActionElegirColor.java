@@ -1,32 +1,27 @@
-package control.eventos;
+package controlador.eventos;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.JButton;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-import control.ParaUI;
+import controlador.ParaUI;
 
-public class ActionBorrarColor implements MouseListener {
+public class ActionElegirColor implements MouseListener {
 
 	private ParaUI paraUI;
 	private Border border;
 
-	public ActionBorrarColor(ParaUI paraUI) {
+	public ActionElegirColor(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		this.paraUI.getAccionesBorrarColor().borrarColor(((JButton) e.getSource()).getBackground());
-		this.paraUI.getEstructura().getLista().borrarColoresRepetidos();
-		this.paraUI.getAccionesParaUI().actualizarRotuloPaleta();
-		this.paraUI.getAccionesParaUI().actualizarUI();
-		this.paraUI.establecerListenerElegirColor();
+		this.paraUI.getAccionesSeleccionarColor().seleccionarColor(((JButton) e.getSource()).getBackground());
 	}
 
 	@Override

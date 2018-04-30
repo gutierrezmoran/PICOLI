@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Botones extends JPanel {
@@ -31,6 +32,10 @@ public class Botones extends JPanel {
 
 	public Comodines getComodines() {
 		return comodines;
+	}
+
+	public JButton getBarajarPila() {
+		return comodines.getBarajarPila();
 	}
 
 }

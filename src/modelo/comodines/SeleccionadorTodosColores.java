@@ -1,10 +1,11 @@
-package modelo;
+package modelo.comodines;
 
 import utiles.Constantes;
 
 public class SeleccionadorTodosColores {
 
 	private int disponibilidad;
+	private boolean desactivado = true;
 
 	public SeleccionadorTodosColores() {
 		inicializar();
@@ -24,6 +25,18 @@ public class SeleccionadorTodosColores {
 
 	public int getDisponibilidad() {
 		return disponibilidad;
+	}
+	
+	public boolean isDesactivado() {
+		return desactivado;
+	}
+	
+	public void activar() {
+		this.desactivado = false;
+	}
+	
+	public void desactivar() {
+		this.desactivado = true;
 	}
 
 }

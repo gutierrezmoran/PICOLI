@@ -35,7 +35,7 @@ public class Lista extends ArrayList<Color> {
 		}
 	}
 
-	boolean comprobarColoresIguales(Color color1, Color color2) {
+	public boolean comprobarColoresIguales(Color color1, Color color2) {
 		assert (color1 != null && color2 != null) : "Alguno de los colores es nulo";
 
 		return color1 == color2;

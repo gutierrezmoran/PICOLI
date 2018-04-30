@@ -3,6 +3,10 @@ package modelo;
 import java.awt.Color;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
+
+import modelo.comodines.BarajadorPilas;
+import modelo.comodines.BorradorColores;
+import modelo.comodines.SeleccionadorTodosColores;
 import utiles.Constantes;
 import utiles.Utiles;
 
@@ -16,6 +20,7 @@ public class Estructura {
 	private PaletaDeColores paletaDeColores;
 	private BorradorColores borradorColores;
 	private SeleccionadorTodosColores seleccionadorTodosColores;
+	private BarajadorPilas barajadorPilas;
 
 	public Estructura() {
 		this.cola = new Cola();
@@ -24,6 +29,7 @@ public class Estructura {
 		this.monedero = new Monedero();
 		this.borradorColores = new BorradorColores(this);
 		this.seleccionadorTodosColores = new SeleccionadorTodosColores();
+		this.barajadorPilas = new BarajadorPilas();
 		this.historialColores = new HistorialColores();
 		this.paletaDeColores = new PaletaDeColores(historialColores);
 		inicializar();
@@ -42,12 +48,12 @@ public class Estructura {
 		this.paletaDeColores.limpiar();
 		this.borradorColores.inicializar();
 		this.seleccionadorTodosColores.inicializar();
+		this.barajadorPilas.inicializar();
 		reiniciarPilas();
 	}
 
 	private void reiniciarPilas() {
-		this.pilas.get(0).limpiar();
-		this.pilas.get(1).limpiar();
+		this.pilas.clear();
 		inicializarPilas();
 	}
 
@@ -55,6 +61,10 @@ public class Estructura {
 		for (int i = 0; i < Constantes.CANTIDAD_PILAS; i++) {
 			this.pilas.add(new Pila());
 		}
+	}
+	
+	public boolean isPilasVacias() {
+		return this.pilas.get(0).isVacia() && this.pilas.get(1).isVacia();
 	}
 
 	public boolean realizarJugada(Color color) {
@@ -75,6 +85,17 @@ public class Estructura {
 		}
 
 		return false;
+	}
+	
+	public boolean barajarPilas() {
+		this.barajadorPilas.cargarPilas(this.pilas);
+		this.barajadorPilas.barajar();
+
+		for (int i = 0; i < this.pilas.size(); i++) {
+			this.pilas.get(i).setPila(this.barajadorPilas.obtenerPila());
+		}
+		this.barajadorPilas.decrementarDisponibilidad();
+		return this.barajadorPilas.comprobarVecesUsado();
 	}
 
 	private int getIndicePilaAleatoria() {
@@ -137,6 +158,22 @@ public class Estructura {
 
 	public SeleccionadorTodosColores getSeleccionadorTodosColores() {
 		return seleccionadorTodosColores;
+	}
+
+	public BarajadorPilas getBarajadorPilas() {
+		return barajadorPilas;
+	}
+
+	public boolean isDesactivadoSeleccionadorTodosColores() {
+		return seleccionadorTodosColores.isDesactivado();
+	}
+
+	public void activarSeleccionadorTodosColores() {
+		seleccionadorTodosColores.activar();
+	}
+
+	public void desactivarSeleccionadorTodosColores() {
+		seleccionadorTodosColores.desactivar();
 	}
 
 }

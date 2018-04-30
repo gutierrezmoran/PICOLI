@@ -1,4 +1,4 @@
-package control.eventos;
+package controlador.eventos;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-import control.ParaUI;
+import controlador.ParaUI;
 
 public class ActionReiniciar implements MouseListener {
 	
