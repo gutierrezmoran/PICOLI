@@ -16,7 +16,7 @@ public class ActionActivarTodosColores implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(this.paraUI.getEstructura().getSeleccionadorTodosColores().isDesactivado()) {
 			this.paraUI.getAccionesActivarTodosColores().generarTodosColores();
-			this.paraUI.getAccionesParaUI().actualizarPaletaDeColores();
+			this.paraUI.getAccionesEstructura().actualizarPaletaDeColores();
 			this.paraUI.getAccionesActivarTodosColores().actualizarRotuloPaleta();
 			this.paraUI.getContentPane().updateUI();
 			this.paraUI.establecerListenerElegirColor();

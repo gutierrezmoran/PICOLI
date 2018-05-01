@@ -22,7 +22,7 @@ public class AccionesSeleccionarColor {
 			this.paraUI.getContentPane().updateUI();
 			this.paraUI.establecerListenerReiniciar();
 		} else {
-			this.paraUI.getAccionesParaUI().actualizarUI();
+			this.paraUI.getAccionesEstructura().actualizarUI();
 			this.paraUI.establecerListenerElegirColor();
 		}
 		
@@ -30,6 +30,6 @@ public class AccionesSeleccionarColor {
 			this.paraUI.getBotones().getComodines().getPedirColor().setEnabled(false);
 		}
 		
-		this.paraUI.getAccionesParaUI().actualizarRotuloPaleta();
+		this.paraUI.getAccionesEstructura().actualizarRotuloPaleta();
 	}
 }

@@ -3,11 +3,11 @@ package controlador.acciones;
 import java.awt.Color;
 import controlador.ParaUI;
 
-public class AccionesParaUI {
+public class AccionesEstructura {
 
 	private ParaUI paraUI;
 
-	public AccionesParaUI(ParaUI paraUI) {
+	public AccionesEstructura(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 		actualizarUI();
