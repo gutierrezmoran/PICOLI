@@ -14,7 +14,7 @@ import vista.UI;
 public class ParaUI extends UI {
 
 	private Estructura estructura;
-	private AccionesParaUI accionesParaUI;
+	private AccionesEstructura accionesEstructura;
 	private AccionesBorrarColor accionesBorrarColor;
 	private AccionesSeleccionarColor accionesSeleccionarColor;
 	private AccionesActivarTodosColores accionesActivarTodosColores;
@@ -22,7 +22,7 @@ public class ParaUI extends UI {
 
 	public ParaUI() {
 		this.estructura = new Estructura();
-		this.accionesParaUI = new AccionesParaUI(this);
+		this.accionesEstructura = new AccionesEstructura(this);
 		this.accionesBorrarColor = new AccionesBorrarColor(this);
 		this.accionesSeleccionarColor = new AccionesSeleccionarColor(this);
 		this.accionesActivarTodosColores = new AccionesActivarTodosColores(this);
@@ -67,7 +67,7 @@ public class ParaUI extends UI {
 
 	public void reiniciar() {
 		this.estructura.reiniciar();
-		this.accionesParaUI.reiniciarJuego();
+		this.accionesEstructura.reiniciarJuego();
 		establecerListeners();
 	}
 
@@ -75,8 +75,8 @@ public class ParaUI extends UI {
 		return estructura;
 	}
 
-	public AccionesParaUI getAccionesParaUI() {
-		return accionesParaUI;
+	public AccionesEstructura getAccionesEstructura() {
+		return accionesEstructura;
 	}
 
 	public AccionesBorrarColor getAccionesBorrarColor() {

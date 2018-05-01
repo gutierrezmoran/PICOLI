@@ -23,8 +23,8 @@ public class ActionBorrarColor implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		this.paraUI.getAccionesBorrarColor().borrarColor(((JButton) e.getSource()).getBackground());
 		this.paraUI.getEstructura().getLista().borrarColoresRepetidos();
-		this.paraUI.getAccionesParaUI().actualizarRotuloPaleta();
-		this.paraUI.getAccionesParaUI().actualizarUI();
+		this.paraUI.getAccionesEstructura().actualizarRotuloPaleta();
+		this.paraUI.getAccionesEstructura().actualizarUI();
 		this.paraUI.establecerListenerElegirColor();
 	}
 

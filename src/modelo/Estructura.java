@@ -72,12 +72,12 @@ public class Estructura {
 
 		this.cola.encolar(color);
 		this.historialColores.actualizar(color);
+		
 		int pilaSeleccionada = getIndicePilaAleatoria();
-		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
-
 		if (isColeccionLlena(this.pilas.get(pilaSeleccionada).getPila(), Constantes.TAMANO_PILA)) {
 			this.lista.alistar(this.pilas.get(pilaSeleccionada).desapilar());
 		}
+		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
 
 		if (this.lista.borrarColoresRepetidos()
 				|| isColeccionLlena(this.lista.getLista(), Constantes.TAMANO_LISTA_LADO)) {
@@ -112,7 +112,7 @@ public class Estructura {
 		assert (coleccion != null) : "La coleccion es nula";
 		assert (limite > 0) : "El limite es igual o inferior a 0";
 
-		return coleccion.size() > limite;
+		return coleccion.size() >= limite;
 
 	}
 

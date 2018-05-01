@@ -15,8 +15,8 @@ public class AccionesBarajarPilas {
 			this.paraUI.getBotones().getComodines().getBarajarPila().setEnabled(false);
 		}
 		
-		this.paraUI.getAccionesParaUI().actualizarPilas();
-		this.paraUI.getAccionesParaUI().actualizarBarajarPilas();
+		this.paraUI.getAccionesEstructura().actualizarPilas();
+		this.paraUI.getAccionesEstructura().actualizarBarajarPilas();
 		this.paraUI.getContentPane().updateUI();
 	}
 }
