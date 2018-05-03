@@ -7,7 +7,7 @@ import modelo.Pila;
 import utiles.Constantes;
 import utiles.Utiles;
 
-public class BarajadorPilas {
+public class Barajador {
 
 	private ArrayList<Color> coloresPilas;
 	private final int MOVIMIENTOS_BARAJAR = 100;
@@ -15,7 +15,7 @@ public class BarajadorPilas {
 	private int disponibilidad;
 	private int mitadCantidadElementos;
 
-	public BarajadorPilas() {
+	public Barajador() {
 		inicializar();
 		this.coloresPilas = new ArrayList<Color>();
 		this.primeraObtencion = true;
@@ -73,5 +73,9 @@ public class BarajadorPilas {
 
 	public int getDisponibilidad() {
 		return disponibilidad;
+	}
+
+	public String getDisponibilidadString() {
+		return String.valueOf(this.disponibilidad);
 	}
 }

@@ -24,6 +24,6 @@ public class AccionesActivarTodosColores {
 	}
 	
 	public void actualizarRotuloPaleta() {
-		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONAR CUALQUIER COLOR DE LOS DISPONIBLES");
+		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONE CUALQUIER COLOR DE LOS DISPONIBLES");
 	}
 }

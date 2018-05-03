@@ -5,12 +5,12 @@ import java.util.Iterator;
 import modelo.Estructura;
 import utiles.Constantes;
 
-public class BorradorColores {
+public class Borrador {
 
 	private Estructura estructura;
 	private int disponibilidad;
 
-	public BorradorColores(Estructura estructura) {
+	public Borrador(Estructura estructura) {
 		inicializar();
 		this.estructura = estructura;
 	}
@@ -43,6 +43,10 @@ public class BorradorColores {
 
 	public int getDisponibilidad() {
 		return disponibilidad;
+	}
+	
+	public String getDisponibilidadString() {
+		return String.valueOf(this.disponibilidad);
 	}
 
 }

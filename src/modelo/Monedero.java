@@ -18,8 +18,12 @@ public class Monedero {
 		this.monedas = 0;
 	}
 
-	public int getMonedas() {
+	public int getMonedasInt() {
 		return monedas;
+	}
+	
+	public String getMonedasString() {
+		return String.valueOf(this.monedas);
 	}
 
 	public boolean isLleno() {

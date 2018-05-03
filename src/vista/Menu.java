@@ -14,29 +14,20 @@ import java.awt.FlowLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Cursor;
-
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.GridLayout;
 
 public class Menu extends JPanel {
 
 	private JButton reiniciar;
 	private JPanel panelCentral;
 	private JPanel panelBotonReiniciar;
+	private JPanel panel;
+	private JLabel lblNewLabel;
 
-	public Menu(boolean estado) {
-		crear(estado);
-	}
-
-	public void crear(boolean estado) {
-		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		setBorder(new EmptyBorder(60, 0, 0, 0));
-		setOpaque(false);
-		crearPanelCentral();
-
-		if (estado) {
-			crearVictoria();
-		} else {
-			crearDerrota();
-		}
+	public Menu(boolean estado, String cantidadMonedas) {
+		crear(estado, cantidadMonedas);
 	}
 
 	private void crearPanelCentral() {
@@ -66,6 +57,25 @@ public class Menu extends JPanel {
 		this.panelCentral.add(mensajePartida, BorderLayout.NORTH);
 	}
 
+	private void crearResultadoMonedas(String cantidad) {
+		panel = new JPanel();
+		panel.setOpaque(false);
+		panelCentral.add(panel, BorderLayout.CENTER);
+		panel.setLayout(new GridLayout(0, 2, 15, 0));
+
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("/assets/coin.gif")));
+		panel.add(lblNewLabel);
+
+		JLabel monedasTotales = new JLabel(cantidad);
+		panel.add(monedasTotales);
+		monedasTotales.setForeground(Color.DARK_GRAY);
+		monedasTotales.setFont(new Font("Tahoma", Font.BOLD, 25));
+		monedasTotales.setHorizontalAlignment(SwingConstants.LEFT);
+		monedasTotales.setIcon(null);
+	}
+
 	private void crearBotonReiniciar() {
 		this.reiniciar = new JButton("Reiniciar");
 		this.reiniciar.setBorder(new LineBorder(new Color(106, 146, 242), 1));
@@ -84,19 +94,27 @@ public class Menu extends JPanel {
 		this.panelCentral.add(this.panelBotonReiniciar, BorderLayout.SOUTH);
 
 		GroupLayout gl_panelReiniciar = new GroupLayout(this.panelBotonReiniciar);
-		gl_panelReiniciar.setHorizontalGroup(
-			gl_panelReiniciar.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panelReiniciar.createSequentialGroup()
-					.addGap(200)
-					.addComponent(reiniciar, GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-					.addGap(200))
-		);
-		gl_panelReiniciar.setVerticalGroup(
-			gl_panelReiniciar.createParallelGroup(Alignment.TRAILING)
-				.addComponent(reiniciar, GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-		);
+		gl_panelReiniciar.setHorizontalGroup(gl_panelReiniciar.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelReiniciar.createSequentialGroup().addGap(200)
+						.addComponent(reiniciar, GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE).addGap(200)));
+		gl_panelReiniciar.setVerticalGroup(gl_panelReiniciar.createParallelGroup(Alignment.TRAILING)
+				.addComponent(reiniciar, GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE));
 
 		this.panelBotonReiniciar.setLayout(gl_panelReiniciar);
+	}
+
+	public void crear(boolean estado, String cantidadMonedas) {
+		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		setBorder(new EmptyBorder(60, 0, 0, 0));
+		setOpaque(false);
+		crearPanelCentral();
+		crearResultadoMonedas(cantidadMonedas);
+
+		if (estado) {
+			crearVictoria();
+		} else {
+			crearDerrota();
+		}
 	}
 
 	public JButton getReiniciar() {

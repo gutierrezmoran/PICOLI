@@ -27,7 +27,7 @@ public class AccionesEstructura {
 	}
 
 	private void actualizarMonedas() {
-		this.paraUI.getMonedero().getMonedas().setText(String.valueOf(this.paraUI.getEstructura().getMonedas()));
+		this.paraUI.getMonedero().getMonedas().setText(this.paraUI.getEstructura().getMonedasString());
 	}
 
 	public void actualizarPilas() {
@@ -36,15 +36,15 @@ public class AccionesEstructura {
 	}
 	
 	private void actualizarBorrarColor() {
-		this.paraUI.getBotones().getComodines().getLabelBorrarColor().setText(String.valueOf(this.paraUI.getEstructura().getBorradorColores().getDisponibilidad()));
+		this.paraUI.getBotones().getComodines().getLabelBorrarColor().setText(this.paraUI.getEstructura().getBorradorColores().getDisponibilidadString());
 	}
 	
 	private void actualizarTodosColores() {
-		this.paraUI.getBotones().getComodines().getLabelPedirColor().setText(String.valueOf(this.paraUI.getEstructura().getSeleccionadorTodosColores().getDisponibilidad()));
+		this.paraUI.getBotones().getComodines().getLabelPedirColor().setText(this.paraUI.getEstructura().getSeleccionadorTodosColores().getDisponibilidadString());
 	}
 	
 	public void actualizarBarajarPilas() {
-		this.paraUI.getBotones().getComodines().getLabelBarajarPila().setText(String.valueOf(this.paraUI.getEstructura().getBarajadorPilas().getDisponibilidad()));
+		this.paraUI.getBotones().getComodines().getLabelBarajarPila().setText(this.paraUI.getEstructura().getBarajadorPilas().getDisponibilidadString());
 	}
 
 	public void actualizarPaletaDeColores() {
@@ -55,7 +55,7 @@ public class AccionesEstructura {
 	}
 	
 	public void actualizarRotuloPaleta() {
-		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONAR UN COLOR");
+		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONE UN COLOR");
 	}
 
 	private void actualizarPila2() {

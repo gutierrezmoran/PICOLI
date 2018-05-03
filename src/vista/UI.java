@@ -11,7 +11,10 @@ import controlador.JPanelBackgroundImage;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import java.awt.Toolkit;
+import javax.swing.border.MatteBorder;
 
 public class UI extends JFrame {
 
@@ -92,7 +95,7 @@ public class UI extends JFrame {
 
 	private void crearLista() {
 		this.lista = new Lista();
-		this.panelPrincipal.add(this.lista, BorderLayout.CENTER);
+		this.panelPrincipal.add(this.lista);
 	}
 
 	private void crearPanelInferior() {
@@ -111,11 +114,11 @@ public class UI extends JFrame {
 		panelInferior.add(this.monedero, BorderLayout.WEST);
 	}
 
-	public void crearMenu(boolean estado) {
+	public void crearMenu(boolean estado, String cantidadMonedas) {
 		this.contentPane.remove(cabecera);
 		this.panelPrincipal.removeAll();
 		
-		this.menu = new Menu(estado);
+		this.menu = new Menu(estado, cantidadMonedas);
 		this.panelPrincipal.add(this.menu, BorderLayout.CENTER);
 	}
 

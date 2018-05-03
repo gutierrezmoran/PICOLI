@@ -39,4 +39,8 @@ public class SeleccionadorTodosColores {
 		this.desactivado = true;
 	}
 
+	public String getDisponibilidadString() {
+		return String.valueOf(this.disponibilidad);
+	}
+
 }

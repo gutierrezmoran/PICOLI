@@ -8,7 +8,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
 import utiles.Constantes;
 
 public class Pila extends JPanel {
@@ -24,9 +25,9 @@ public class Pila extends JPanel {
 		
 		JLabel label = new JLabel();
 		label.setBackground(color);
-		label.setBorder(new EmptyBorder(3, 3, 3, 3));
 		label.setFont(new Font("Arial", Font.BOLD, 10));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBorder(new LineBorder(Color.DARK_GRAY));
 		label.setOpaque(true);
 		
 		this.pila.add(label);
@@ -41,7 +42,7 @@ public class Pila extends JPanel {
 		this.pila = new JPanel();
 		this.pila.setBorder(null);
 		this.pila.setBackground(Constantes.BACKGROUND_PANELES);
-		this.pila.setLayout(new GridLayout(Constantes.TAMANO_PILA, 1, 0, 0));
+		this.pila.setLayout(new GridLayout(Constantes.TAMANO_PILA, 1, 0, 3));
 		this.add(this.pila);
 	}
 

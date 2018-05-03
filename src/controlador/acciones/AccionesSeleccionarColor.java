@@ -18,7 +18,7 @@ public class AccionesSeleccionarColor {
 		this.paraUI.desactivarSeleccionadorTodosColores();
 		
 		if (this.paraUI.getEstructura().realizarJugada(color)) {
-			this.paraUI.crearMenu(this.paraUI.getEstructura().isTesoroLleno());
+			this.paraUI.crearMenu(this.paraUI.getEstructura().isTesoroLleno(), String.valueOf(this.paraUI.getEstructura().getMonedasString()));
 			this.paraUI.getContentPane().updateUI();
 			this.paraUI.establecerListenerReiniciar();
 		} else {

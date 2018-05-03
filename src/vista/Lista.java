@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
 import utiles.Constantes;
 
 public class Lista extends JPanel {
@@ -23,9 +25,7 @@ public class Lista extends JPanel {
 		
 		JLabel label = new JLabel();
 		label.setBackground(color);
-		label.setBorder(new EmptyBorder(3, 3, 3, 3));
-		label.setFont(new Font("Arial", Font.BOLD, 10));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBorder(new LineBorder(Color.DARK_GRAY));
 		label.setOpaque(true);
 
 		this.lista.add(label);
@@ -38,8 +38,8 @@ public class Lista extends JPanel {
 
 		this.lista = new JPanel();
 		this.lista.setBackground(Constantes.BACKGROUND_PANELES);
-		this.lista.setLayout(new GridLayout(Constantes.TAMANO_LISTA_LADO - 1, 1, 2, 0));
-		this.add(this.lista);
+		this.add(this.lista, BorderLayout.CENTER);
+		lista.setLayout(new GridLayout(Constantes.TAMANO_LISTA_ALTO, Constantes.TAMANO_LISTA_ANCHO - 1, 3, 3));
 
 		JLabel lblLista = new JLabel("LISTA");
 		lblLista.setForeground(Color.BLACK);

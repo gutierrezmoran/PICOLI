@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 
-import modelo.comodines.BarajadorPilas;
-import modelo.comodines.BorradorColores;
+import modelo.comodines.Barajador;
+import modelo.comodines.Borrador;
 import modelo.comodines.SeleccionadorTodosColores;
 import utiles.Constantes;
 import utiles.Utiles;
@@ -18,18 +18,18 @@ public class Estructura {
 	private Monedero monedero;
 	private HistorialColores historialColores;
 	private PaletaDeColores paletaDeColores;
-	private BorradorColores borradorColores;
+	private Borrador borrador;
 	private SeleccionadorTodosColores seleccionadorTodosColores;
-	private BarajadorPilas barajadorPilas;
+	private Barajador barajador;
 
 	public Estructura() {
 		this.cola = new Cola();
 		this.pilas = new ArrayList<>();
 		this.lista = new Lista(this);
 		this.monedero = new Monedero();
-		this.borradorColores = new BorradorColores(this);
+		this.borrador = new Borrador(this);
 		this.seleccionadorTodosColores = new SeleccionadorTodosColores();
-		this.barajadorPilas = new BarajadorPilas();
+		this.barajador = new Barajador();
 		this.historialColores = new HistorialColores();
 		this.paletaDeColores = new PaletaDeColores(historialColores);
 		inicializar();
@@ -46,9 +46,9 @@ public class Estructura {
 		this.monedero.reiniciar();
 		this.historialColores.limpiar();
 		this.paletaDeColores.limpiar();
-		this.borradorColores.inicializar();
+		this.borrador.inicializar();
 		this.seleccionadorTodosColores.inicializar();
-		this.barajadorPilas.inicializar();
+		this.barajador.inicializar();
 		reiniciarPilas();
 	}
 
@@ -80,7 +80,7 @@ public class Estructura {
 		this.pilas.get(pilaSeleccionada).apilar(this.cola.desencolar());
 
 		if (this.lista.borrarColoresRepetidos()
-				|| isColeccionLlena(this.lista.getLista(), Constantes.TAMANO_LISTA_LADO)) {
+				|| isColeccionLlena(this.lista.getLista(), Constantes.TAMANO_LISTA)) {
 			return true;
 		}
 
@@ -88,14 +88,14 @@ public class Estructura {
 	}
 	
 	public boolean barajarPilas() {
-		this.barajadorPilas.cargarPilas(this.pilas);
-		this.barajadorPilas.barajar();
+		this.barajador.cargarPilas(this.pilas);
+		this.barajador.barajar();
 
 		for (int i = 0; i < this.pilas.size(); i++) {
-			this.pilas.get(i).setPila(this.barajadorPilas.obtenerPila());
+			this.pilas.get(i).setPila(this.barajador.obtenerPila());
 		}
-		this.barajadorPilas.decrementarDisponibilidad();
-		return this.barajadorPilas.comprobarVecesUsado();
+		this.barajador.decrementarDisponibilidad();
+		return this.barajador.comprobarVecesUsado();
 	}
 
 	private int getIndicePilaAleatoria() {
@@ -136,8 +136,8 @@ public class Estructura {
 		return monedero;
 	}
 
-	public BorradorColores getBorradorColores() {
-		return borradorColores;
+	public Borrador getBorradorColores() {
+		return borrador;
 	}
 
 	public PaletaDeColores getPaletaDeColores() {
@@ -148,8 +148,12 @@ public class Estructura {
 		return monedero.isLleno();
 	}
 
-	public int getMonedas() {
-		return monedero.getMonedas();
+	public int getMonedasInt() {
+		return monedero.getMonedasInt();
+	}
+	
+	public String getMonedasString() {
+		return monedero.getMonedasString();
 	}
 
 	public boolean isListaVacia() {
@@ -160,8 +164,8 @@ public class Estructura {
 		return seleccionadorTodosColores;
 	}
 
-	public BarajadorPilas getBarajadorPilas() {
-		return barajadorPilas;
+	public Barajador getBarajadorPilas() {
+		return barajador;
 	}
 
 	public boolean isDesactivadoSeleccionadorTodosColores() {

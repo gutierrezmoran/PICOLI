@@ -14,10 +14,6 @@ public class Cola extends ArrayDeque<Color> {
 		this.cola = new ArrayDeque<Color>();
 	}
 
-	public ArrayDeque<Color> getCola() {
-		return cola;
-	}
-
 	public void encolar(Color color) {
 		assert color != null : "El color es nulo";
 		
@@ -38,4 +34,9 @@ public class Cola extends ArrayDeque<Color> {
 			encolar(Colores.getElement(Utiles.generarNumeroAleatorio(1, 5)));
 		}
 	}
+	
+	public ArrayDeque<Color> getCola() {
+		return cola;
+	}
+
 }

@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="modelo.HistorialColores" project="PICOLI" 
     file="/PICOLI/src/modelo/HistorialColores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="228" width="221" x="547" y="580"/>    
+    <position height="228" width="221" x="547" y="452"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </enumeration>  
   <class id="11" language="java" name="modelo.PaletaDeColores" project="PICOLI" 
     file="/PICOLI/src/modelo/PaletaDeColores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="228" width="213" x="894" y="579"/>    
+    <position height="228" width="213" x="894" y="451"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -280,8 +280,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="modelo.comodines.BorradorColores" project="PICOLI" 
-    file="/PICOLI/src/modelo/comodines/BorradorColores.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="32" language="java" name="modelo.comodines.Borrador" project="PICOLI" 
+    file="/PICOLI/src/modelo/comodines/Borrador.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="784" y="1686"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -291,7 +291,7 @@
   </class>  
   <class id="33" language="java" name="modelo.comodines.SeleccionadorTodosColores" project="PICOLI" 
     file="/PICOLI/src/modelo/comodines/SeleccionadorTodosColores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1292" y="778"/>    
+    <position height="-1" width="-1" x="1408" y="702"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -316,8 +316,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="modelo.comodines.BarajadorPilas" project="PICOLI" 
-    file="/PICOLI/src/modelo/comodines/BarajadorPilas.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="36" language="java" name="modelo.comodines.Barajador" project="PICOLI" 
+    file="/PICOLI/src/modelo/comodines/Barajador.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1368" y="1512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -326,67 +326,67 @@
     </display>  
   </class>  
   <association id="37">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="38" name="paraUI">        
-        <position height="0" width="0" x="0" y="0"/>      
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="38" name="lista">        
+        <position height="0" width="0" x="-226" y="-325"/>      
       </attribute>      
       <multiplicity id="39" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="-226" y="-325"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="40">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="41" name="paraUI">        
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="41" name="menu">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="42" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="43">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="44" name="borradorColores">        
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="44" name="botones">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="45" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="32" navigable="true"/>    
+    <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="46">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="47" name="cola">        
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="47" name="monedero">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="48" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="49">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="50" name="pilas">        
-        <position height="0" width="0" x="1" y="45"/>      
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="50" name="paraUI">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="51" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="1" y="45"/>      
+      <multiplicity id="51" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="52">    
-    <end type="SOURCE" refId="14" navigable="false">      
+    <end type="SOURCE" refId="26" navigable="false">      
       <attribute id="53" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -398,19 +398,19 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="55">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="56" name="accionesBarajarPilas">        
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="56" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="57" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="35" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="58">    
-    <end type="SOURCE" refId="30" navigable="false">      
+    <end type="SOURCE" refId="34" navigable="false">      
       <attribute id="59" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -422,171 +422,171 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="61">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="62" name="paraUI">        
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="62" name="historialColores">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="63" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="64">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="65" name="contentPane">        
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="65" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="66" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="67">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="68" name="paraUI">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="68" name="accionesBarajarPilas">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="69" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="35" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="70">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="71" name="botones">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="71" name="accionesEstructura">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="72" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="73">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="74" name="paletaDeColores">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="74" name="monedero">        
+        <position height="0" width="0" x="50" y="100"/>      
       </attribute>      
       <multiplicity id="75" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="50" y="100"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="76">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="77" name="comodines">        
-        <position height="0" width="0" x="0" y="0"/>      
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="77" name="lista">        
+        <position height="0" width="0" x="1" y="78"/>      
       </attribute>      
       <multiplicity id="78" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="1" y="78"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="79">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="80" name="paraUI">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="80" name="accionesSeleccionarColor">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="81" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="28" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="82">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="83" name="seleccionadorTodosColores">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="83" name="estructura">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="84" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="33" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="85">    
-    <end type="SOURCE" refId="35" navigable="false">      
-      <attribute id="86" name="paraUI">        
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="86" name="contentPane">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="87" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="88">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="89" name="historialColores">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="89" name="paleta">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="90" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="91">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="92" name="accionesEstructura">        
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="92" name="estructura">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="93" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="94">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="95" name="paraUI">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="95" name="accionesActivarTodosColores">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="96" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="97">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="98" name="barajadorPilas">        
+      <attribute id="98" name="borrador">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="99" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="36" navigable="true"/>    
+    <end type="TARGET" refId="32" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="100">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="101" name="paleta">        
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="101" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="102" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="103">    
@@ -602,19 +602,19 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="106">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="107" name="accionesSeleccionarColor">        
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="107" name="comodines">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="108" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="109">    
-    <end type="SOURCE" refId="31" navigable="false">      
+    <end type="SOURCE" refId="15" navigable="false">      
       <attribute id="110" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -626,19 +626,19 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="112">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="113" name="monedero">        
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="113" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="114" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="115">    
-    <end type="SOURCE" refId="34" navigable="false">      
+    <end type="SOURCE" refId="13" navigable="false">      
       <attribute id="116" name="paraUI">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -651,102 +651,102 @@
   </association>  
   <association id="118">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="119" name="monedero">        
-        <position height="0" width="0" x="50" y="100"/>      
+      <attribute id="119" name="seleccionadorTodosColores">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="120" minimum="0" maximum="1">        
-        <position height="0" width="0" x="50" y="100"/>      
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
+    <end type="TARGET" refId="33" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="121">    
+  <association id="121">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="122" name="paletaDeColores">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="123" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="125" name="paraUI">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="126" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="128" name="cola">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="129" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="131" name="pilas">        
+        <position height="0" width="0" x="1" y="45"/>      
+      </attribute>      
+      <multiplicity id="132" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="1" y="45"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="134" name="paraUI">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="135" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
     <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="122">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="123" name="accionesActivarTodosColores">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="124" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="125">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="126" name="lista">        
-        <position height="0" width="0" x="-226" y="-325"/>      
-      </attribute>      
-      <multiplicity id="127" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-226" y="-325"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="128">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="129" name="estructura">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="130" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="131">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="132" name="estructura">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="133" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="134">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="135" name="accionesBorrarColor">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="136" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="137">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="138" name="menu">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="138" name="accionesBorrarColor">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="139" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="27" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="140">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="141" name="lista">        
-        <position height="0" width="0" x="1" y="78"/>      
+      <attribute id="141" name="barajador">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="142" minimum="0" maximum="1">        
-        <position height="0" width="0" x="1" y="78"/>      
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="36" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

@@ -2,9 +2,7 @@ package controlador.acciones;
 
 import java.awt.Color;
 import java.awt.Component;
-
 import javax.swing.JLabel;
-
 import controlador.ParaUI;
 
 public class AccionesBorrarColor {
@@ -15,10 +13,13 @@ public class AccionesBorrarColor {
 		this.paraUI = paraUI;
 	}
 
-	public void borrarColor(Color color) {
+	public boolean borrarColor(Color color) {
 		if (!this.paraUI.getEstructura().getBorradorColores().borrarColor(color)) {
 			this.paraUI.getBotones().getComodines().getBorrarColor().setEnabled(false);
 		}
+
+		this.paraUI.getEstructura().getLista().borrarColoresRepetidos();
+		return this.paraUI.getEstructura().isTesoroLleno();
 	}
 
 	public void actualizarPaleta() {
@@ -33,7 +34,8 @@ public class AccionesBorrarColor {
 	}
 
 	public void actualizarRotuloPaleta() {
-		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores().setText("SELECCIONAR UN COLOR PARA BORRAR DE LA LISTA");
+		this.paraUI.getBotones().getPaletaDeColores().getLabelPanelColores()
+				.setText("SELECCIONE UN COLOR PARA BORRAR DE LA LISTA");
 	}
 
 }
